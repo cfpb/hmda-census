@@ -1,0 +1,6 @@
+.DS_Store
+*.html
+
+data/
+.ipynb_checkpoints/
+python/.ipynb_checkpoints/
