@@ -12,7 +12,7 @@
 ## Sources of Data
 - [OMB Publications on MSA](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)
 - [Census Publications on MSA](https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html)
-- The [FFIEC Census Flat File](https://www.ffiec.gov/censusapp.htm) is produced by annually the FRB on behalf of the FFIEC
+- The [FFIEC Census Flat File](https://www.ffiec.gov/censusapp.htm) is produced by annually the FRB on behalf of the FFIEC  
 *Note: the Census Flat File is indexed starting at 1*
 - [MSA to name mapping](https://www.census.gov/population/estimates/metro-city/0312msa.txt)
 
