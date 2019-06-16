@@ -12,6 +12,7 @@
 ## Sources of Data
 The Office of Management and Budget produces annual updates to MSA data. These updates can include changes to an MSA's boundaries or creation of new MSAs. These data have no regular publication cycle. 
 - [OMB Publications on MSA](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)
+- [OMB Delineation Bulletins](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)   
 
 HMDA uses the MSA definitions in effect on 12/31 of the year preceding collection. This is the date used to check all filing criteria that determines if an institution is required to report HMDA data.
 
