@@ -1,11 +1,11 @@
 ## HMDA Census Geographic and Demographic Data 
 
 ## Table of Contents
-- [Repository Purpose and Scope]()
-- [Requirements and Setup]()
-- [Sources of Data]()
-- [Uses of Data]()
-
+- [Repository Purpose and Scope](https://github.com/cfpb/hmda-census#repository-purpose)
+- [Requirements and Setup](https://github.com/cfpb/hmda-census#requirements-and-setup-and-running-the-code)
+- [Sources of Data](https://github.com/cfpb/hmda-census#sources-of-data)
+- [Uses of Data](https://github.com/cfpb/hmda-census#uses-of-data)
+- [HMDA Platform Census Files](https://github.com/cfpb/hmda-census#hmda-platform-census-files)
 
 ## Repository Purpose
 - Provide an ETL for geographic and Census data used by the HMDA Platform
