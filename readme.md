@@ -2,12 +2,34 @@
 
 ## Table of Contents
 - [Repository Purpose and Scope]()
+- [Requirements and Setup]()
 - [Sources of Data]()
 - [Uses of Data]()
+
 
 ## Repository Purpose
 - Provide an ETL for geographic and Census data used by the HMDA Platform
 - Check to ensure the accuracy of Census data in the HMDA Platform
+
+
+## Requirements and Setup and Running the Code
+
+**Install Requirements**
+The code is built in Python3.7 which can be found at the link below. The following packages are also required and can be installed using the commands listed.
+- [Python 3.7](https://www.python.org/downloads/)
+- Pandas: `pip3 install pandas`
+- xlrb: `pip3 install xlrb`
+- Jupyter Notebooks: `pip3 install jupyter` *note: this is only needed to run the ipynb file*
+
+**Execute the script**
+- To run the script: `python3 create_ffiec_census_file_cut.py`
+
+- To launch a notebook to execute the script:
+	- Navigate to the python directory `cd python`
+	- Launch Jupyter `jupyter notebook`
+	- Open `create_ffiec_census_file_cut.ipynb`
+	- Run all cells
+
 
 ## Sources of Data
 The Office of Management and Budget produces annual updates to MSA data. These updates can include changes to an MSA's boundaries or creation of new MSAs. These data have no regular publication cycle. 
