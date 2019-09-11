@@ -4,6 +4,9 @@
 # In[1]:
 
 
+import os
+from os import path
+    
 import pandas as pd
 import urllib.request
 import zipfile
@@ -12,12 +15,22 @@ import zipfile
 # In[2]:
 
 
+if not os.path.exists("../data/"):
+    os.mkdir("../data/")
+    
+if not os.path.exists("../output/"):
+    os.mkdir("../output/")
+
+
+# In[3]:
+
+
 #Set resource URLs for downloading
 ffiec_census_url = "https://www.ffiec.gov/Census/Census_Flat_Files/CENSUS2019.zip"
 census_delineation_url = "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2018/delineation-files/list1_Sep_2018.xls"
 
 
-# In[3]:
+# In[4]:
 
 
 #Download Census delineation file to get MSA/MD names
@@ -35,7 +48,7 @@ census_df = census_df[["CBSA Code", "full_county_fips", "MSA/MD Name"]]
 census_df.head(1)
 
 
-# In[4]:
+# In[5]:
 
 
 #Download ZIP archive from FFIEC Census site and extract it
@@ -44,7 +57,7 @@ with zipfile.ZipFile("../data/ffiec_census_2019.zip", 'r') as zip_ref:
     zip_ref.extractall("../data/")
 
 
-# In[13]:
+# In[6]:
 
 
 #load FFIEC Census file and extract relevant fields and resave them
@@ -75,7 +88,7 @@ print(len(ffiec_census_df))
 ffiec_census_df.head()
 
 
-# In[16]:
+# In[7]:
 
 
 #Join MSA/MD name to ffiec_census_df using 5 digit county FIPS
@@ -88,13 +101,7 @@ ffiec_census_df = ffiec_census_df[['hmda_year', 'msa_md', 'state_fips', 'county_
 ffiec_census_df.head()
 
 
-# In[17]:
-
-
-
-
-
-# In[ ]:
+# In[8]:
 
 
 #set header to platform names
@@ -104,7 +111,7 @@ ffiec_census_df.columns = platform_census_header
 ffiec_census_df.head()
 
 
-# In[8]:
+# In[9]:
 
 
 ffiec_census_df.to_csv("../output/ffiec_census_2019.txt", sep="|", index=False)
