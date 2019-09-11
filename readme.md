@@ -18,7 +18,7 @@
 The code is built in Python3.7 which can be found at the link below. The following packages are also required and can be installed using the commands listed.
 - [Python 3.7](https://www.python.org/downloads/)
 - Pandas: `pip3 install pandas`
-- xlrb: `pip3 install xlrb`
+- xlrs: `pip3 install xlrd`
 - Jupyter Notebooks: `pip3 install jupyter` *note: this is only needed to run the ipynb file*
 
 **Execute the script**
