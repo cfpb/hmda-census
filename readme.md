@@ -45,6 +45,7 @@ The FFIEC Census Flat File contains a mapping of MSA data to tract and demograph
 The Census reference files contain MSA/MD, micropolitan statistical area definitions, names, and maps to county and tract codes.
 - [Census Publications on MSA](https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html)
 - [Census API](https://www.census.gov/data/developers/data-sets.html)   
+- [County FIPS and name list](https://en.wikipedia.org/wiki/List_of_United_States_FIPS_codes_by_county)
 
 **Needed**
 A list of small counties identified by FIPs code. This is used to check whether filers can claim an exemption from certain geographic reporting.
