@@ -67,6 +67,8 @@ The variables added include:
 
 Census geographic data are used to map MSAs to county and tract areas in the Aggregate and Disclosure reports and for geographic lookup features in HMDA data tools web interfaces. 
 
+[See here for the HMDA-Platform](https://github.com/cfpb/hmda-platform/blob/745f50bafd6a6dc23641b0275e00aea42ea503a4/common/src/main/scala/hmda/census/records/CensusRecords.scala#L56) logic mapping Census to LAR data.
+
 **HMDA Publication Products**
 - [Aggregate Reports](https://ffiec.cfpb.gov/data-publication/aggregate-reports): contain MSA level data on application and lending activity for all institutions reporting HMDA data.
 - [Disclosure Reports](https://ffiec.cfpb.gov/data-publication/disclosure-reports): contain MSA level data on application and lending activity for a single institution.
