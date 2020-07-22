@@ -1,0 +1,32 @@
+DEBUG: True
+
+OUT_PATH: "../output/"
+DATA_PATH: "../data/"
+CENSUS_PATH: "../data/census_data/"
+FOLDER_PATHS: ["OUT_PATH", "DATA_PATH", "CENSUS_PATH"]
+
+FFIEC_CENSUS_BASE_URL: "https://www.ffiec.gov/Census/Census_Flat_Files/"
+platform_census_header: "Collection Year|MSA/MD|State|County|Census Tract|FFIEC Median Family Income|Population|Minority Population %|Number of Owner Occupied Units |Number of 1 to 4 Family Units |Tract MFI|Tract to MSA Income %|Median Age|Small County|MSA/MD Name"
+
+extract_fields: {"msamd":2, "state_fips":3, "county_fips":4, "tract":5, "small_county":7,
+             "urban_rural":10, "msa_med_fam_inc":11, "med_household_inc":12, 
+             "tract_med_fam_inc_as_pct_msamd":13, "ffiec_med_fam_inc":14, "total_persons":16}
+
+col_names:  {0:"hmda_year", 
+             1:"msa_md", 
+             2:"state_fips", 
+             3:"county_fips", 
+             4:"census_tract", 
+             6:"small_county_flag",
+             12:"tract_to_msa_mfi_pct",
+             13:"ffiec_mfi",
+             14:"total_persons", 
+             20:"minority_population_pct", 
+             580:"tract_mfi",
+             899:"total_1_4_family_units",
+             915:"owner_occupied_units", 
+             952:"median_housing_age"}
+
+census_2019:
+  ffiec_file: "https://www.ffiec.gov/Census/Census_Flat_Files/CENSUS2019.zip"
+  msa_md_name_file: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2018/delineation-files/list1_Sep_2018.xls"
