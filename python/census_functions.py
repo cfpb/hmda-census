@@ -31,13 +31,37 @@ class CensusTools(object):
 		
 		print()
 		for path in self.config_data["FOLDER_PATHS"]:
-			print("creating {folder}".format(folder=self.config_data[path]))
 			if not os.path.exists(self.config_data[path]):
+				print("creating {folder}".format(folder=self.config_data[path]))
 				os.makedirs(self.config_data[path])
 
+		self.db_params = { 
+					"host":"localhost",
+					"user":os.environ.get("USER"),
+					"password":os.environ.get("PASSWORD"),
+					"dbname": "hmda_census",
+					"port": 5432,
+					"sslmode": "require"
+					}
 
 
-	def get_ffiec_census_file(self, years=[2019], unzip=True, move=True):
+
+	def connect(self, params):
+			"""
+			Connects to a postgres database instance
+
+			PARAMETERS:
+			params: host, user, password, dbname, port, sslmode
+			"""
+
+			try:
+				conn = psycopg2.connect(**params)
+				return conn, conn.cursor()
+			except psycopg2.Error as e:
+				print("bad connection attempt, ", e)
+
+
+	def get_ffiec_census_file(self, years=["2019"], unzip=True, move=True, download=True):
 		"""
 		Retrieves Census flat file data from the FFIEC website.
 		Each file is 1 year of data intended to be used with HMDA data.
@@ -48,22 +72,38 @@ class CensusTools(object):
 		unzip, if true: unzips all zip files in the DATA_PATH location
 		move, if true: moves all files in the from sub folders to the main data folder
 		"""
+		if download:
 
-		base_url = self.config_data["FFIEC_CENSUS_BASE_URL"]
-		for year in years:
-			local_file_name = "ffiec_census_{year}.zip".format(year=year)
-			print()
-			print("getting data for {year}".format(year=year))
+			base_url = self.config_data["FFIEC_CENSUS_BASE_URL"]
+			for year in years:
 
-			if year >= 2008:
-				census_resp = requests.get(base_url + "CENSUS{year}.zip".format(year=year))
-			else:
-				census_resp = requests.get(base_url + "Zip%20Files/{year}.zip".format(year=year))
+				local_file_name = "ffiec_census_{year}.zip".format(year=year)
+				print()
+				print("getting data for {year}".format(year=year))
 
-			print("saving data for {year} as {name}".format(year=year, name=local_file_name))
+				if int(year) >= 2015:
+					census_year_url = base_url + "CENSUS{year}.zip".format(year=year)
 
-			with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
-				infile.write(census_resp.content)
+				elif int(year) == 2014:
+					census_year_url = base_url + "CENSUS{year}.ZIP".format(year=year)
+
+				elif int(year) in [2012, 2013]:
+					census_year_url  = base_url + "Census{year}.zip".format(year=year)
+
+				elif int(year) >= 2008:
+					census_year_url = base_url + "census{year}.zip".format(year=year)
+
+				else:
+					census_year_url = base_url + "Zip%20Files/{year}.zip".format(year=year)
+
+				if self.config_data["DEBUG"]:
+					print(census_year_url)
+
+				census_resp = requests.get(census_year_url)
+				print("saving data for {year} as {name}".format(year=year, name=local_file_name))
+
+				with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
+					infile.write(census_resp.content)
 
 
 		if unzip:
@@ -73,11 +113,58 @@ class CensusTools(object):
 			print("Unzipping files in {folder}".format(folder=self.config_data["CENSUS_PATH"]))
 			census_files = [f for f in listdir(self.config_data["CENSUS_PATH"]) if isfile(join(self.config_data["CENSUS_PATH"], f))]
 			census_files = [f for f in census_files if f[-4:]==".zip"]
-			
+			for file in census_files:
+				for year in years:
+					if year not in file:
+						census_files.remove(file)
+
+			if self.config_data["DEBUG"]:
+				print()
+				print("census files to unzip")
+				print(census_files)
+
 			#unzip all census files
 			for file in census_files:
-				with zipfile.ZipFile(self.config_data["CENSUS_PATH"] + file, 'r') as zip_ref:
-					zip_ref.extractall(self.config_data["CENSUS_PATH"])
+					with zipfile.ZipFile(self.config_data["CENSUS_PATH"] + file, 'r') as zip_ref:
+						
+						if self.config_data["DEBUG"]:
+							print()
+							print("files in archive:")
+							print(zip_ref.namelist())
+						
+						for file in zip_ref.namelist(): #iterate over files in archive
+							print()
+							print("extracting data and docs for ", file)
+							#handle txt file: extract and rename to census_dict_year.doc or census_dict_year.docx
+							if file[-4:] in [".doc"]:
+								new_name = "census_docs_{year}".format(year=file[-8:-4]) + file[-4:]
+								new_name = new_name.lower()
+
+								with open(self.config_data["CENSUS_DOCS"] + new_name, "wb") as outfile:
+									outfile.write(zip_ref.read(file))
+
+							elif file[-4:] in ["docx"]:
+								new_name = "census_docs_{year}".format(year=file[-9:-5]) + file[-5:]
+								new_name = new_name.lower()
+
+								with open(self.config_data["CENSUS_DOCS"] + new_name, "wb") as outfile:
+									outfile.write(zip_ref.read(file))
+
+							#handle data file: extract and rename to census_data_year.DAT or census_data_year.csv
+							if file[-4:] in [".DAT", ".csv", ".dat"]:
+								new_name = "census_data_{year}".format(year=file[-8:-4]) + file[-4:]
+								new_name = new_name.lower()
+
+								with open(self.config_data["CENSUS_PATH"] + new_name, "wb") as outfile:
+									outfile.write(zip_ref.read(file))
+
+							if file[-4:] == ".zip":
+								new_name = "census_data_{year}".format(year=file[-8:-4]) + file[-4:]
+								new_name = new_name.lower()
+
+								with open(self.config_data["CENSUS_PATH"] + new_name, "wb") as outfile:
+									outfile.write(zip_ref.read(file))
+
 
 		if move:
 
@@ -86,15 +173,36 @@ class CensusTools(object):
 			print()
 			print("Moving all FFIEC Census files to {folder} and removing old sub folders".format(folder=self.config_data["CENSUS_PATH"]))
 			directories = [f for f in listdir(self.config_data["CENSUS_PATH"]) if not isfile(join(self.config_data["CENSUS_PATH"], f))]
+			
+			if self.config_data["DEBUG"]:
+				print("directories:", directories)
+
 			for folder in directories:
 				files = [f for f in listdir(self.config_data["CENSUS_PATH"] + folder) if isfile(join(self.config_data["CENSUS_PATH"] + folder, f))]
+
+				if self.config_data["DEBUG"]:
+					print("files:", files)
+
 				for file in files:
-					print(file)
-					shutil.move(self.config_data["CENSUS_PATH"] + folder + "/" + file, self.config_data["CENSUS_PATH"])
+					#remove DS store instead of moving it
+					if file == ".DS_Store":
+						os.remove(self.config_data["CENSUS_PATH"] + folder + "/" + file)
+
+					else:
+						print()
+						print("moving:", file)
+						shutil.move(self.config_data["CENSUS_PATH"] + folder + "/" + file, self.config_data["CENSUS_PATH"])
+					
+					try: #handle extra zip archive in 2017 data
+						files_2017 = [f for f in listdir(self.config_data["CENSUS_PATH"] + folder) if isfile(join(self.config_data["CENSUS_PATH"] + folder, f))]
+						for file in files_2017:
+							shutil.move(self.config_data["CENSUS_PATH"] + folder + "/ffiec_census_2017/" + file, self.config_data["CENSUS_PATH"])
+					except:
+						print("didn't move 2017 census folder properly")
 					os.rmdir(self.config_data["CENSUS_PATH"] + folder)
 
 
-	def get_census_fields(self, census_file="census2019.csv", sep=",", save_csv=True):
+	def extract_census_fields(self, years=["2019"], sep=",", save_csv=True):
 
 		"""
 		Extracts the enumerated fields from an FFIEC Census data CSV
@@ -102,7 +210,7 @@ class CensusTools(object):
 
 		Notes: 
 		- not all FFIEC census data is in CSV format and data contents may change between years
-		 
+		- 2009 and earlier files are in .DAT format and require fixed width file loads
 		
 		
 		PARAMETERS:
@@ -112,54 +220,170 @@ class CensusTools(object):
 			- Pass in the index in the documentation. Do not adjust for zero-indexing, 
 				that is handled in this code.
 
-		census_file: the name of the census file used for the extract
-		data_path: the path to the census file to be used for extract
-		save_csv: write the extract to a CSV file
-		sep: separater character to use when writing file extract
+		census_files: the names of the census files used for the extracts
+		data_path: the path to the census file to be used for extracts
+		save_csv: write the extracts to a CSV file
+		sep: separater character to use when writing file extracts
 		"""
 
 		data_path = self.config_data["CENSUS_PATH"] #set path to data files
 		field_dict = self.config_data["extract_fields"] #fields to extract from file
 
 		field_names = list(field_dict.keys())
-		field_nums = list(field_dict.values())
+		field_nums_one_idx = list(field_dict.values())
 
-		field_nums = [num - 1 for num in field_nums] #adjust for non-0 indexing in FFIEC file dictionary
+		field_nums = [int(num) - 1 for num in field_nums_one_idx] #adjust for non-0 indexing in FFIEC file dictionary
 
 		if self.config_data["DEBUG"]:
 			print()
 			print("field names to extract")
 			print(field_names)
 			print()
-			print("field numbers to extract")
+			print("field numbers from file schema (not 0 adjusted")
+			print(field_nums_one_idx)
+			print()
+			print("field numbers to extract (adjusted to 0 index")
 			print(field_nums)
 
-		#data are loaded as objects to preserve integrity of geographic identifiers with leading 0-s
-		census_data = pd.read_csv(data_path+census_file, usecols=field_nums, names=field_names, header=None, dtype=object)
+		return_dict = {} #for returning year keyed dataframes of census data
+		for year in years:
+			#set file name
+			print()
+			print("processing data for {year}".format(year=year))
+			#data are loaded as objects to preserve integrity of geographic identifiers with leading 0-s
+			if int(year) >= 2012:
+				print("using CSV data file")
+				census_data = pd.read_csv(data_path + "census_data_{year}.csv".format(year=year), 
+										  usecols=field_nums, 
+										  names=field_names, 
+										  header=None, 
+										  dtype=object)
 
-		if save_csv:
-			census_data.to_csv(self.config_data["OUT_PATH"] + census_file[:-4] + "_extract.csv", sep=sep, index=False)
+			else:
+				#load fixed width spec for old FFIEC census data (only verified on 2006 year)
+				print("using fixed width data file")
+				fwf_spec = pd.read_csv(self.config_data["ffiec_census_2006_fwf_spec"])
 
-		return census_data
+
+				census_data = pd.read_fwf(data_path + "census_data_{year}.dat".format(year=year), 
+										  widths=fwf_spec["Length"], 
+										  header=None, 
+										  dtype=object)
+
+				#remove fields not in extract dictionary
+				census_data = census_data[field_nums]
+				#set column names
+				census_data.columns = field_names
+
+			if save_csv:
+				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.csv".format(year=year), 
+								   sep=sep, 
+								   index=False)
+
+			return_dict[year] = census_data #add data extract to return dictionary
+
+		return return_dict
 
 
-	def get_census_omb_delineation_file(self, year="2019"):
+	def get_census_omb_delineation_file(self, years=["2019"], convert=True):
 
 		"""
+
+		PARAMETERS:
+		years: list of years for which to retrieve data files.
+			Note: not all years have a distinct delineation file
+		convert: if true, convert the file from XLS to CSV and trim unusable rows
+		"""
+		for year in years:
+			if int(year) < 2003:
+				print()
+				print("not yet configured for OMB delineation parsing prior to 2003")
+				return
+
+			local_file_name = "excel_delineation_{year}.xls".format(year=year) #set filename for writing to disk
+
+			print()
+			print("getting Census/OMB delineation data for {year}".format(year=year))
+
+			#request data from site
+			print("calling: \n {url}".format(url=self.config_data["msa_md_delineation"]["omb_{year}".format(year=str(year))]))
+			delin_resp = requests.get(self.config_data["msa_md_delineation"]["omb_{year}".format(year=str(year))])
+
+			print("saving data for {year} as {name}".format(year=year, name=local_file_name))
+
+			with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
+				infile.write(delin_resp.content)
+
+
+			if convert:
+				#configure Excel load based on OMB delineation year file
+				sheet_name = self.config_data["omb_sheet_names"]["omb_{year}".format(year=year)]
+				skip_rows = self.config_data["omb_skip_rows"]["omb_{year}".format(year=year)]
+
+			
+				#read Excel file
+				data_xls = pd.read_excel(self.config_data["CENSUS_PATH"] + local_file_name, sheet_name, index_col=None)
+				#save sheet as CSV
+				data_xls.to_csv(self.config_data["CENSUS_PATH"] + "full_omb_delin_{year}.csv".format(year=year), encoding='utf-8', index=False)
+
+				#load CSV to dataframe to extract needed columns
+				census_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "full_omb_delin_{year}.csv".format(year=year), skiprows=skip_rows, dtype=object)
+
+
+				if int(year) >= 2013:
+					#create 5 digit county FIPS
+					census_df["full_county_fips"] = census_df.apply(lambda x: x["FIPS State Code"] + x["FIPS County Code"], axis=1)
+
+					#List3_2008
+				else:
+					#rename county FIPS column to match other Census OMB files
+					census_df.rename(columns={"FIPS":"full_county_fips"}, inplace=True)
+
+				#get single name for each Metropolitan or Micropolitan statistical area using CSA over CBSA Title
+				census_df["MSA/MD Name"] = census_df.apply(lambda x: 
+				                                   x["CSA Title"] if pd.notnull(x["CSA Title"]) else x["CBSA Title"], axis=1)
+
+				#Remove unneeded columns
+				census_df = census_df[["CBSA Code", "full_county_fips", "MSA/MD Name"]]
+				#write census omb names to disk
+				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.csv".format(year=year), index=False)
+
+
+	def combine_omb_ffiec(self, years=["2019"]):
+		
 		"""
 		
-		local_file_name = "delineation_{year}.xls".format(year=year) #set filename for writing to disk
+		PARAMETERS:
+		years: list of years for which to combine files
 
-		print()
-		print("getting Census/OMB delineation data for {year}".format(year=year))
+		"""
 
-		#request data from site
-		print("calling: \n {url}".format(url=self.config_data["census_{year}".format(year=year)]["msa_md_name_file"]))
-		delin_resp = requests.get(self.config_data["census_{year}".format(year=year)]["msa_md_name_file"])
+		return_dict = {} #year keyed dictionary to return combined Census data files
 
-		print("saving data for {year} as {name}".format(year=year, name=local_file_name))
+		for year in years:
+			print()
+			print("Combining FFIEC Census and OMB data for {year}".format(year=year))
+			#load FFIEC Census File Cut
+			ffiec_census_df = pd.read_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.csv".format(year=year), dtype=object)
 
-		with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
-			infile.write(delin_resp.content)
+			#load MSA/MD name file
+			msa_md_name_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.csv".format(year=year), dtype=object)
+			
+			#Create 5 digit county FIPS in FFIEC file
+			ffiec_census_df["full_county_fips"] = ffiec_census_df.apply(lambda x: x.State + x.County, axis=1)
+			
+			#Merge FFIEC Census data cut with MSA/MD name file to add MSA/MD names
+			ffiec_census_df = ffiec_census_df.merge(msa_md_name_df, how="left", on="full_county_fips")
+
+			#set columns for output
+			ffiec_census_df = ffiec_census_df[self.config_data["OUT_COLUMNS"].keys()]
+
+			#Write file to disk
+			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.csv".format(year=year), index=False)
+
+			return_dict[year] = ffiec_census_df #add combined census data to return dict for handoff
+
+		return return_dict
+
 
 
