@@ -19,7 +19,7 @@ OUT_COLUMNS: {'Collection Year': "INTEGER",
              'MSA/MD': "VARCHAR(5)",
              'State': "VARCHAR(2)",
              'County': "VARCHAR(3)",
-             'Census Tract': "VARCHAR(11)",
+             'Census Tract': "VARCHAR(6)",
              'FFIEC Median Family Income': "INTEGER",
              'Population': "INTEGER",
              'Minority Population %': "DECIMAL",
@@ -29,7 +29,7 @@ OUT_COLUMNS: {'Collection Year': "INTEGER",
              'Tract to MSA Income %': "DECIMAL",
              'Median Age': "INTEGER",
              'Small County': "VARCHAR(1)",
-             'MSA/MD Name': "VHARCHAR"}
+             'MSA/MD Name': "VARCHAR"}
 
 extract_fields: {"Collection Year": 1,
                  "MSA/MD": 2, 

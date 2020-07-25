@@ -8,6 +8,7 @@ from os.path import isfile, join
 import shutil
 
 import pandas as pd
+import psycopg2
 import requests
 import yaml
 import zipfile
@@ -39,9 +40,9 @@ class CensusTools(object):
 					"host":"localhost",
 					"user":os.environ.get("USER"),
 					"password":os.environ.get("PASSWORD"),
-					"dbname": "hmda_census",
+					"dbname": "hmda",
 					"port": 5432,
-					"sslmode": "require"
+					"sslmode": "disable"
 					}
 
 
@@ -245,6 +246,13 @@ class CensusTools(object):
 			print("field numbers to extract (adjusted to 0 index")
 			print(field_nums)
 
+			#field numbers from file schema (not 0 adjusted
+			#[1, 2, 3, 4, 5, 14, 15, 21, 916, 900, 581, 13, 953, 7]
+
+			#field numbers to extract (adjusted to 0 index
+			#[0, 1, 2, 3, 4, 13, 14, 20, 915, 899, 580, 12, 952, 6]
+
+
 		return_dict = {} #for returning year keyed dataframes of census data
 		for year in years:
 			#set file name
@@ -255,9 +263,10 @@ class CensusTools(object):
 				print("using CSV data file")
 				census_data = pd.read_csv(data_path + "census_data_{year}.csv".format(year=year), 
 										  usecols=field_nums, 
-										  names=field_names, 
 										  header=None, 
 										  dtype=object)
+				census_data = census_data[field_nums]
+				census_data.columns = field_names
 
 			else:
 				#load fixed width spec for old FFIEC census data (only verified on 2006 year)
@@ -376,8 +385,9 @@ class CensusTools(object):
 			ffiec_census_df = ffiec_census_df.merge(msa_md_name_df, how="left", on="full_county_fips")
 
 			#set columns for output
+			print(ffiec_census_df.columns)
 			ffiec_census_df = ffiec_census_df[self.config_data["OUT_COLUMNS"].keys()]
-
+			print(ffiec_census_df.columns)
 			#Write file to disk
 			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.csv".format(year=year), index=False)
 
@@ -385,5 +395,45 @@ class CensusTools(object):
 
 		return return_dict
 
+
+	def load_to_db(self, schema="census", years=["2019"], sep=",", encoding="latin1"):
+		"""
+		"""
+
+
+		for year in years:
+			with open(self.config_data["census_load_sql"]) as in_sql:
+				census_load_sql = in_sql.read()
+
+			sql_field_base = "{field} {type}"
+			sql_def_lines = []
+
+			#format SQL column names and data types
+			for key, value in self.config_data["OUT_COLUMNS"].items():
+
+				field_name = key.lower().replace("/", "_").replace(" ", "_").replace("%","pct")
+				new_line = sql_field_base.format(field=field_name, type=value)
+				sql_def_lines.append(new_line)
+
+			sql_def_lines = ",\n".join(sql_def_lines)
+
+			#set table and data reference for year
+			table = "ffiec_census_{year}".format(year=year)
+
+			data_file = self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.csv".format(year=year)
+			data_file = os.path.abspath(data_file)
+
+			if self.config_data["DEBUG"]:
+				print(census_load_sql.format(fields_definition=sql_def_lines, schema=schema, table=table, 
+				data_path_and_filename=data_file ,encoding=encoding, sep=sep))
+
+
+			conn, cur = self.connect(self.db_params)
+			cur.execute(census_load_sql.format(fields_definition=sql_def_lines, schema=schema, table=table, 
+				data_path_and_filename=data_file ,encoding=encoding, sep=sep))
+
+			conn.close()
+
+			
 
 
