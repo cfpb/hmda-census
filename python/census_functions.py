@@ -241,30 +241,19 @@ class CensusTools(object):
 		"""
 
 		data_path = self.config_data["CENSUS_PATH"] #set path to data files
-		field_dict = self.config_data["extract_fields"] #fields to extract from file
 
-		field_names = list(field_dict.keys())
-		field_nums_one_idx = list(field_dict.values())
 
-		field_nums = [int(num) - 1 for num in field_nums_one_idx] #adjust for non-0 indexing in FFIEC file dictionary
+		field_dict_2003 = self.config_data["extract_fields_2003_on"] #fields to extract from file
+		field_dict_2002 = self.config_data["extract_fields_2002_prior"] #fields to extract from file
 
-		if self.config_data["DEBUG"]:
-			print()
-			print("field names to extract")
-			print(field_names)
-			print()
-			print("field numbers from file schema (not 0 adjusted")
-			print(field_nums_one_idx)
-			print()
-			print("field numbers to extract (adjusted to 0 index")
-			print(field_nums)
+		field_names_2003 = list(field_dict_2003.keys())
+		field_names_2002 = list(field_dict_2002.keys())
 
-			#field numbers from file schema (not 0 adjusted
-			#[1, 2, 3, 4, 5, 14, 15, 21, 916, 900, 581, 13, 953, 7]
+		field_nums_one_idx_2003 = list(field_dict_2003.values())
+		field_nums_one_idx_2002 = list(field_dict_2002.values())
 
-			#field numbers to extract (adjusted to 0 index
-			#[0, 1, 2, 3, 4, 13, 14, 20, 915, 899, 580, 12, 952, 6]
-
+		field_nums_2003 = [int(num) - 1 for num in field_nums_one_idx_2003] #adjust for non-0 indexing in FFIEC file dictionary
+		field_nums_2002 = [int(num) - 1 for num in field_nums_one_idx_2002] #adjust for non-0 indexing in FFIEC file dictionary
 
 		return_dict = {} #for returning year keyed dataframes of census data
 		for year in years:
@@ -275,28 +264,41 @@ class CensusTools(object):
 			if int(year) >= 2012:
 				print("using CSV data file")
 				census_data = pd.read_csv(data_path + "census_data_{year}.csv".format(year=year), 
-										  usecols=field_nums, 
+										  usecols=field_nums_2003, 
 										  header=None, 
 										  dtype=object)
 
-				census_data = census_data[field_nums]
-				census_data.columns = field_names
+				census_data = census_data[field_nums_2003]
+				census_data.columns = field_names_2003
 
 			else:
 				#load fixed width spec for old FFIEC census data (only verified on 2006 year)
 				print("using fixed width data file")
-				fwf_spec = pd.read_csv(self.config_data["ffiec_census_2006_fwf_spec"])
+				if int(year) >= 2003:
+					#set fixed width format spec
+					fwf_spec = pd.read_csv(self.config_data["ffiec_census_2006_fwf_spec"])
 
+				else:
+					#set fixed width format spec
+					fwf_spec = pd.read_csv(self.config_data["ffiec_census_2002_fwf_spec"])	
 
+									
 				census_data = pd.read_fwf(data_path + "census_data_{year}.dat".format(year=year), 
 										  widths=fwf_spec["Length"], 
 										  header=None, 
 										  dtype=object)
 
-				#remove fields not in extract dictionary
-				census_data = census_data[field_nums]
-				#set column names
-				census_data.columns = field_names
+				if int(year) >= 2003:
+					#remove fields not in extract dictionary
+					census_data = census_data[field_nums_2003]
+					#set column names
+					census_data.columns = field_names_2003
+
+				else:
+					#remove fields not in extract dictionary
+					census_data = census_data[field_nums_2002]
+					#set column names
+					census_data.columns = field_names_2002
 
 			if save_csv:
 				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.csv".format(year=year), 
@@ -304,6 +306,16 @@ class CensusTools(object):
 								   index=False)
 
 			return_dict[year] = census_data #add data extract to return dictionary
+
+		if self.config_data["DEBUG"]:
+			print()
+			print("field names to extract")
+			print(field_names_2002)
+			print(field_names_2003)
+			print()
+			print("field numbers from file schema (not 0 adjusted")
+			print(field_nums_one_idx_2003)
+			print(field_nums_one_idx_2002)			
 
 		return return_dict
 
@@ -394,19 +406,24 @@ class CensusTools(object):
 			msa_md_name_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.csv".format(year=year), dtype=object)
 			
 			#Create 5 digit county FIPS in FFIEC file
-			ffiec_census_df["full_county_fips"] = ffiec_census_df.apply(lambda x: x.State + x.County, axis=1)
+			ffiec_census_df["full_county_fips"] = ffiec_census_df.apply(lambda x: str(x.State) + str(x.County), axis=1)
 			
 			#Merge FFIEC Census data cut with MSA/MD name file to add MSA/MD names
 			ffiec_census_df = ffiec_census_df.merge(msa_md_name_df, how="left", on="full_county_fips")
 
 			#set columns for output
-			print(ffiec_census_df.columns)
 			ffiec_census_df = ffiec_census_df[self.config_data["OUT_COLUMNS"].keys()]
-			print(ffiec_census_df.columns)
+
 			#Write file to disk
 			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.csv".format(year=year), index=False)
 
 			return_dict[year] = ffiec_census_df #add combined census data to return dict for handoff
+
+			if self.config_data["DEBUG"]:
+				print(ffiec_census_df.head())
+				print()
+				print(msa_md_name_df.head())
+				print()
 
 		return return_dict
 

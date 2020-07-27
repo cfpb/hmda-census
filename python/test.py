@@ -24,13 +24,13 @@ test_years = ["2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012",
 #Censustool.get_ffiec_census_file(years=Censustool.config_data["ALL_YEARS"], download=False, unzip=False, move=True)
 
 #extract desired columns from census files
-#extracts_dict = Censustool.extract_census_fields(years=Censustool.config_data["ALL_YEARS"])
+#extracts_dict = Censustool.extract_census_fields(years=["2003"])
 
 #download OMB MSA MD delineation files
 #Censustool.get_census_omb_delineation_file(years=Censustool.config_data["ALL_YEARS"])
 
 #combine OMB and FFIEC census data
-#Censustool.combine_omb_ffiec(years=test_years)
+Censustool.combine_omb_ffiec(years=["2003"])
 
 #load combined data to database
-Censustool.load_to_db(years=test_years)
+#Censustool.load_to_db(years=test_years)

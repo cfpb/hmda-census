@@ -12,6 +12,8 @@ ALL_YEARS: ["2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "201
             "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"]
 
 ffiec_census_2006_fwf_spec: "../schemas/ffiec_census_fwf_spec_2006.csv"
+ffiec_census_2002_fwf_spec: "../schemas/ffiec_census_fwf_spec_2002.csv"
+
 FFIEC_CENSUS_BASE_URL: "https://www.ffiec.gov/Census/Census_Flat_Files/"
 
 census_load_sql: sql/load_hmda_census.sql
@@ -32,7 +34,7 @@ OUT_COLUMNS: {'Collection Year': "INTEGER",
              'Small County': "VARCHAR(1)",
              'MSA/MD Name': "VARCHAR"}
 
-extract_fields: {"Collection Year": 1,
+extract_fields_2003_on: {"Collection Year": 1,
                  "MSA/MD": 2, 
                  "State": 3, 
                  "County": 4, 
@@ -45,6 +47,21 @@ extract_fields: {"Collection Year": 1,
                  "Tract MFI": 581,
                  "Tract to MSA Income %": 13, 
                  "Median Age": 953,
+                 "Small County": 7}
+
+extract_fields_2002_prior: {"Collection Year": 1,
+                 "MSA/MD": 2, 
+                 "State": 3, 
+                 "County": 4, 
+                 "Census Tract": 5, 
+                 "FFIEC Median Family Income": 12, 
+                 "Population": 13,
+                 "Minority Population %": 10,
+                 "Number of Owner Occupied Units": 201,
+                 "Number of 1 to 4 Family Units": 208,
+                 "Tract MFI": 176,
+                 "Tract to MSA Income %": 11, 
+                 "Median Age": 246,
                  "Small County": 7}
 
 msa_md_delineation:
