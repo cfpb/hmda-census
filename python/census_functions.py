@@ -116,8 +116,12 @@ class CensusTools(object):
 			census_files = [f for f in census_files if f[-4:]==".zip"]
 			for file in census_files:
 				for year in years:
-					if year not in file:
-						census_files.remove(file)
+					if year == "2017" and year in file:
+						try:
+							print(year)
+							census_files.remove(file)
+						except:
+							print("no file to remove or bad command line 123 census_functions.py \n relevant only for census 2017 year", file)
 
 			if self.config_data["DEBUG"]:
 				print()
@@ -178,11 +182,25 @@ class CensusTools(object):
 			if self.config_data["DEBUG"]:
 				print("directories:", directories)
 
+			#2017 has a sub archive that needs to be handled 
+			try: #handle extra zip archive in 2017 data
+				files_2017 = [f for f in listdir(self.config_data["CENSUS_PATH"] + folder) if isfile(join(self.config_data["CENSUS_PATH"] + folder, f))]
+				for file_2017 in files_2017:
+					shutil.move(self.config_data["CENSUS_PATH"] + folder + "/ffiec_census_2017/" + file_2017, self.config_data["CENSUS_PATH"])
+				os.remove(self.config_data["CENSUS_PATH"] + "census_data_2017.zip")
+				
+			except:
+				print("didn't move 2017 census folder properly")
+
+
 			for folder in directories:
 				files = [f for f in listdir(self.config_data["CENSUS_PATH"] + folder) if isfile(join(self.config_data["CENSUS_PATH"] + folder, f))]
 
 				if self.config_data["DEBUG"]:
+					print()
 					print("files:", files)
+
+
 
 				for file in files:
 					#remove DS store instead of moving it
@@ -194,12 +212,7 @@ class CensusTools(object):
 						print("moving:", file)
 						shutil.move(self.config_data["CENSUS_PATH"] + folder + "/" + file, self.config_data["CENSUS_PATH"])
 					
-					try: #handle extra zip archive in 2017 data
-						files_2017 = [f for f in listdir(self.config_data["CENSUS_PATH"] + folder) if isfile(join(self.config_data["CENSUS_PATH"] + folder, f))]
-						for file in files_2017:
-							shutil.move(self.config_data["CENSUS_PATH"] + folder + "/ffiec_census_2017/" + file, self.config_data["CENSUS_PATH"])
-					except:
-						print("didn't move 2017 census folder properly")
+					
 					os.rmdir(self.config_data["CENSUS_PATH"] + folder)
 
 
@@ -265,6 +278,7 @@ class CensusTools(object):
 										  usecols=field_nums, 
 										  header=None, 
 										  dtype=object)
+
 				census_data = census_data[field_nums]
 				census_data.columns = field_names
 
@@ -303,6 +317,7 @@ class CensusTools(object):
 			Note: not all years have a distinct delineation file
 		convert: if true, convert the file from XLS to CSV and trim unusable rows
 		"""
+
 		for year in years:
 			if int(year) < 2003:
 				print()
