@@ -114,14 +114,9 @@ class CensusTools(object):
 			print("Unzipping files in {folder}".format(folder=self.config_data["CENSUS_PATH"]))
 			census_files = [f for f in listdir(self.config_data["CENSUS_PATH"]) if isfile(join(self.config_data["CENSUS_PATH"], f))]
 			census_files = [f for f in census_files if f[-4:]==".zip"]
-			for file in census_files:
-				for year in years:
-					if year == "2017" and year in file:
-						try:
-							print(year)
-							census_files.remove(file)
-						except:
-							print("no file to remove or bad command line 123 census_functions.py \n relevant only for census 2017 year", file)
+
+			for year in years: 
+				census_files = [f for f in census_files if year in f]
 
 			if self.config_data["DEBUG"]:
 				print()
@@ -156,14 +151,15 @@ class CensusTools(object):
 									outfile.write(zip_ref.read(file))
 
 							#handle data file: extract and rename to census_data_year.DAT or census_data_year.csv
-							if file[-4:] in [".DAT", ".csv", ".dat"]:
+							elif file[-4:] in [".DAT", ".csv", ".dat"]:
 								new_name = "census_data_{year}".format(year=file[-8:-4]) + file[-4:]
 								new_name = new_name.lower()
 
 								with open(self.config_data["CENSUS_PATH"] + new_name, "wb") as outfile:
 									outfile.write(zip_ref.read(file))
 
-							if file[-4:] == ".zip":
+							elif file[-4:] == ".zip":
+								print("extracting nested zip archive")
 								new_name = "census_data_{year}".format(year=file[-8:-4]) + file[-4:]
 								new_name = new_name.lower()
 
