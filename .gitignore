@@ -1,6 +1,8 @@
 .DS_Store
 *.html
-
+venv/
 data/
 .ipynb_checkpoints/
 python/.ipynb_checkpoints/
+python/__pycache__/
+output/
