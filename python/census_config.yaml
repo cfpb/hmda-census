@@ -1,0 +1,137 @@
+DEBUG: True
+
+OUT_PATH: "../output/"
+DATA_PATH: "../data/"
+SQL_PATH: "sql/"
+CENSUS_PATH: "../data/census_data/"
+CENSUS_DOCS: "../data/census_docs/"
+FOLDER_PATHS: ["OUT_PATH", "DATA_PATH", "CENSUS_PATH", "CENSUS_DOCS", "SQL_PATH"]
+
+ALL_YEARS: ["2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009",
+            "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998",
+            "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"]
+
+ffiec_census_2006_fwf_spec: "../schemas/ffiec_census_fwf_spec_2006.csv"
+ffiec_census_2002_fwf_spec: "../schemas/ffiec_census_fwf_spec_2002.csv"
+
+FFIEC_CENSUS_BASE_URL: "https://www.ffiec.gov/Census/Census_Flat_Files/"
+
+census_load_sql: sql/load_hmda_census.sql
+
+OUT_COLUMNS: {'Collection Year': "INTEGER",
+             'MSA/MD': "VARCHAR(5)",
+             'State': "VARCHAR(2)",
+             'County': "VARCHAR(3)",
+             'Census Tract': "VARCHAR(6)",
+             'FFIEC Median Family Income': "INTEGER",
+             'Population': "INTEGER",
+             'Minority Population %': "DECIMAL",
+             'Number of Owner Occupied Units': "INTEGER",
+             'Number of 1 to 4 Family Units': "INTEGER",
+             'Tract MFI': "INTEGER",
+             'Tract to MSA Income %': "DECIMAL",
+             'Median Age': "INTEGER",
+             'Small County': "VARCHAR(1)",
+             'MSA/MD Name': "VARCHAR"}
+
+extract_fields_2003_on: {"Collection Year": 1,
+                 "MSA/MD": 2, 
+                 "State": 3, 
+                 "County": 4, 
+                 "Census Tract": 5, 
+                 "FFIEC Median Family Income": 14, 
+                 "Population": 15,
+                 "Minority Population %": 21,
+                 "Number of Owner Occupied Units": 916,
+                 "Number of 1 to 4 Family Units": 900,
+                 "Tract MFI": 581,
+                 "Tract to MSA Income %": 13, 
+                 "Median Age": 953,
+                 "Small County": 7}
+
+extract_fields_2002_prior: {"Collection Year": 1,
+                 "MSA/MD": 2, 
+                 "State": 3, 
+                 "County": 4, 
+                 "Census Tract": 5, 
+                 "FFIEC Median Family Income": 12, 
+                 "Population": 13,
+                 "Minority Population %": 10,
+                 "Number of Owner Occupied Units": 201,
+                 "Number of 1 to 4 Family Units": 208,
+                 "Tract MFI": 176,
+                 "Tract to MSA Income %": 11, 
+                 "Median Age": 246,
+                 "Small County": 7}
+
+msa_md_delineation:
+  omb_2020: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2020/delineation-files/list1_2020.xls"
+  omb_2019: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2018/delineation-files/list1_Sep_2018.xls"
+  omb_2018: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2018/delineation-files/list1_Sep_2018.xls"
+  omb_2017: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2017/delineation-files/list1.xls"
+  omb_2016: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2015/delineation-files/list1.xls"
+  omb_2015: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2015/delineation-files/list1.xls"
+  omb_2014: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2013/delineation-files/list1.xls"
+  omb_2013: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2013/delineation-files/list1.xls"
+  omb_2012: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2009/historical-delineation-files/list3.xls"
+  omb_2011: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2009/historical-delineation-files/list3.xls"
+  omb_2010: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2009/historical-delineation-files/list3.xls"
+  omb_2009: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2009/historical-delineation-files/list3.xls"
+  omb_2008: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2008/historical-delineation-files/list3.xls"
+  omb_2007: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2007/historical-delineation-files/list3.xls"
+  omb_2006: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2006/historical-delineation-files/list3.xls"
+  omb_2005: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2005/historical-delineation-files/list3.xls"
+  omb_2004: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2004/historical-delineation-files/list3.xls"
+  omb_2003: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2003/historical-delineation-files/0312cbsas-csas.xls"
+  omb_2002: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1999/historical-delineation-files/99mfips.txt"
+  omb_2002: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1999/historical-delineation-files/99mfips.txt"
+  omb_2001: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1999/historical-delineation-files/99mfips.txt"
+  omb_2000: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1999/historical-delineation-files/99mfips.txt"
+  omb_1999: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1999/historical-delineation-files/99mfips.txt"
+  omb_1998: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1993/historical-delineation-files/93mfips.txt"
+  omb_1997: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1993/historical-delineation-files/93mfips.txt"
+  omb_1996: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1993/historical-delineation-files/93mfips.txt"
+  omb_1995: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1993/historical-delineation-files/93mfips.txt"
+  omb_1994: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1993/historical-delineation-files/93mfips.txt"
+  omb_1993: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1993/historical-delineation-files/93mfips.txt"
+  omb_1992: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1990/historical-delineation-files/90mfips.txt"
+  omb_1991: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1990/historical-delineation-files/90mfips.txt"
+  omb_1990: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1990/historical-delineation-files/90mfips.txt"
+  
+omb_skip_rows:
+  omb_2019: 2
+  omb_2018: 2
+  omb_2017: 2
+  omb_2016: 2
+  omb_2015: 2
+  omb_2014: 2
+  omb_2013: 2
+  omb_2012: 3
+  omb_2011: 3
+  omb_2010: 3
+  omb_2009: 3
+  omb_2008: 3
+  omb_2007: 3
+  omb_2006: 3
+  omb_2005: 3
+  omb_2004: 7
+  omb_2003: 2
+
+omb_sheet_names:
+  omb_2019: "List 1"
+  omb_2018: "List 1"
+  omb_2017: "List 1"
+  omb_2016: "List 1"
+  omb_2015: "List 1"
+  omb_2014: "List 1"
+  omb_2013: "List 1"
+  omb_2012: "List3_2009"
+  omb_2011: "List3_2009"
+  omb_2010: "List3_2009"
+  omb_2009: "List3_2009"
+  omb_2008: "List3_2008"
+  omb_2007: "List3_2007"
+  omb_2006: "CBSAs and CSAs December 2006"
+  omb_2005: "CBSAs and CSAs December 2005 "
+  omb_2004: "CBSAs and CSAs November 2004 "
+  omb_2003: "CBSAs and CSAs December 2003 "
