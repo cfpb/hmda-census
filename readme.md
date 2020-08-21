@@ -15,40 +15,43 @@
 ## Requirements and Setup and Running the Code
 
 **Install Requirements**
-The code is built in Python3.7 which can be found at the link below. The following packages are also required and can be installed using the commands listed.
-- [Python 3.7](https://www.python.org/downloads/)
-- Pandas: `pip3 install pandas`
-- xlrs: `pip3 install xlrd`
-- Jupyter Notebooks: `pip3 install jupyter` *note: this is only needed to run the ipynb file*
+The code is built in Python3.X which can be found at the link below. The following packages are also required and can be installed using the commands listed.
+- [Python 3.6 or greater](https://www.python.org/downloads/)
+- set up a virtual environment if desired: `virtualenv venv`
+	- turn on virtual environment: `source venv/bin/activate`
+	- turn off virtual environment: `deactivate`
+- install requirements packages: `pip install -r requirements.txt`
+- *Note: to load data files to a database, you must have one installed locally. This code has been tested with [PostgreSQL](https://www.postgresql.org/download/)*
 
-**Execute the script**
-- To run the script: `python3 create_ffiec_census_file_cut.py`
+### Working With the Scripts
+[Configuration](https://github.com/cfpb/hmda-census/blob/master/python/census_config.yaml): Determines which years of data to use, allows selection of fields in both data files, and contains data specifications and URLs relevant.
 
-- To launch a notebook to execute the script:
-	- Navigate to the python directory `cd python`
-	- Launch Jupyter `jupyter notebook`
-	- Open `create_ffiec_census_file_cut.ipynb`
-	- Run all cells
+The configuration is used in the [census_functions.py](https://github.com/cfpb/hmda-census/blob/master/python/census_functions.py) class. [The test.py](https://github.com/cfpb/hmda-census/blob/master/python/test.py) script contains examples that use the class to download, cut, merge, and load to database the resulting census data.
+
+### Current issues:
+- MSA to tract mapping verification needs to be updated for the new codebase
+- MSA delineation files pre-2000 are in a different format that is yet to be parsed
 
 
 ## Sources of Data
-The Office of Management and Budget produces annual updates to MSA data. These updates can include changes to an MSA's boundaries or creation of new MSAs. These data have no regular publication cycle. 
+The HMDA Platform uses data the combines elements of the FFIEC Census Flat File and the OMB MSA delineation files. The FFIEC Census file contains over 1,000 data elements, of which the HMDA Platform uses a small subset. The OMB MSA bulletines are primarily used for names.
+
+[The HMDA Platform Wiki](https://github.cfpb.gov/HMDA-Operations/hmda-devops/wiki/Census-and-Demographic-Data) contains information on how and which Census data are used in the HMDA program.
+
+The Office of Management and Budget produces MSA data. Updates can include changes to an MSA's boundaries or creation of new MSAs. These data have no regular publication cycle. HMDA Operations uses the MSA definitions in effect on 12/31 of the year preceding collection, this aligns with other Regulation C criteria. 
 - [OMB Publications on MSA](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)
 - [OMB Delineation Bulletins](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)   
 
-HMDA uses the MSA definitions in effect on 12/31 of the year preceding collection. This is the date used to check all filing criteria that determines if an institution is required to report HMDA data.
+The FFIEC produces an annual Census Flat File containing demographic data and a mapping of MSA data to Census tract. 
+- [FFIEC Census Flat Files by Year](https://www.ffiec.gov/censusapp.htm) 
+	- *Note: the Census Flat File is indexed starting at 1*
 
-The FFIEC Census Flat File contains a mapping of MSA data to tract and demographic data used by the FFIEC. This file is produced annually and is the primary source of the geographic and demographic data used by the HMDA Platform.
-- The [FFIEC Census Flat File](https://www.ffiec.gov/censusapp.htm) is produced by annually the FRB on behalf of the FFIEC  
-*Note: the Census Flat File is indexed starting at 1*
-
+**Additional Census data is available, but not used in this project:**
 The Census reference files contain MSA/MD, micropolitan statistical area definitions, names, and maps to county and tract codes.
 - [Census Publications on MSA](https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html)
 - [Census API](https://www.census.gov/data/developers/data-sets.html)   
 - [County FIPS and name list](https://www.census.gov/geographies/reference-files/2018/demo/popest/2018-fips.html)
 
-**Needed**
-A list of small counties identified by FIPs code. This is used to check whether filers can claim an exemption from certain geographic reporting.
 
 ## Uses of Data
 The HMDA Platform uses data during data submission and publication. 
