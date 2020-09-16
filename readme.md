@@ -36,8 +36,6 @@ The configuration is used in the [census_functions.py](https://github.com/cfpb/h
 ## Sources of Data
 The HMDA Platform uses data the combines elements of the FFIEC Census Flat File and the OMB MSA delineation files. The FFIEC Census file contains over 1,000 data elements, of which the HMDA Platform uses a small subset. The OMB MSA bulletines are primarily used for names.
 
-[The HMDA Platform Wiki](https://github.cfpb.gov/HMDA-Operations/hmda-devops/wiki/Census-and-Demographic-Data) contains information on how and which Census data are used in the HMDA program.
-
 The Office of Management and Budget produces MSA data. Updates can include changes to an MSA's boundaries or creation of new MSAs. These data have no regular publication cycle. HMDA Operations uses the MSA definitions in effect on 12/31 of the year preceding collection, this aligns with other Regulation C criteria. 
 - [OMB Publications on MSA](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)
 - [OMB Delineation Bulletins](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)   
