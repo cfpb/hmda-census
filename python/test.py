@@ -12,18 +12,18 @@ from census_functions import CensusTools
 Censustool = CensusTools()
 
 #download census files
-#Censustool.get_ffiec_census_file(years=Censustool.config_data["ALL_YEARS"], download=True, unzip=False, move=False)
+Censustool.get_ffiec_census_file(years=Censustool.config_data["ALL_YEARS"], download=True, unzip=False, move=False)
 
 #Unzip Census files
-#Censustool.get_ffiec_census_file(years=Censustool.config_data["ALL_YEARS"], download=False, unzip=True, move=False)
+Censustool.get_ffiec_census_file(years=Censustool.config_data["ALL_YEARS"], download=False, unzip=True, move=False)
 #2017 is zipped twice, the second call unzips the sub archive
-#Censustool.get_ffiec_census_file(years=["2017"], download=False, unzip=True, move=False)
+Censustool.get_ffiec_census_file(years=["2017"], download=False, unzip=True, move=False)
 
 #move Census files and empty folders
-#Censustool.get_ffiec_census_file(years=Censustool.config_data["ALL_YEARS"], download=False, unzip=False, move=True)
+Censustool.get_ffiec_census_file(years=Censustool.config_data["ALL_YEARS"], download=False, unzip=False, move=True)
 
 #extract desired columns from census files
-#extracts_dict = Censustool.extract_census_fields(years=Censustool.config_data["ALL_YEARS"]) #sep can be changed to comma for CSV output
+extracts_dict = Censustool.extract_census_fields(years=Censustool.config_data["ALL_YEARS"]) #sep can be changed to comma for CSV output
 
 #download OMB MSA MD delineation files
 Censustool.get_census_omb_delineation_file(years=Censustool.config_data["ALL_YEARS"])
