@@ -474,7 +474,7 @@ class CensusTools(object):
 			ffiec_census_df = ffiec_census_df[self.config_data["OUT_COLUMNS"].keys()]
 
 			#Write file to disk
-			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.csv".format(year=year), 
+			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.{end}".format(year=year, end=file_ending), 
 								   index=False, 
 								   sep=sep)
 
