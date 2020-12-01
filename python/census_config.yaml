@@ -1,5 +1,5 @@
 DEBUG: True
-
+SEP: "|"
 OUT_PATH: "../output/"
 DATA_PATH: "../data/"
 SQL_PATH: "sql/"
@@ -7,7 +7,7 @@ CENSUS_PATH: "../data/census_data/"
 CENSUS_DOCS: "../data/census_docs/"
 FOLDER_PATHS: ["OUT_PATH", "DATA_PATH", "CENSUS_PATH", "CENSUS_DOCS", "SQL_PATH"]
 
-ALL_YEARS: ["2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009",
+ALL_YEARS: ["2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009",
             "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998",
             "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"]
 
@@ -42,7 +42,7 @@ extract_fields_2003_on: {"Collection Year": 1,
                  "FFIEC Median Family Income": 14, 
                  "Population": 15,
                  "Minority Population %": 21,
-                 "Number of Owner Occupied Units": 916,
+                 "Number of Owner Occupied Units": 880,
                  "Number of 1 to 4 Family Units": 900,
                  "Tract MFI": 581,
                  "Tract to MSA Income %": 13, 
@@ -99,6 +99,7 @@ msa_md_delineation:
   omb_1990: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1990/historical-delineation-files/90mfips.txt"
   
 omb_skip_rows:
+  omb_2020: 2
   omb_2019: 2
   omb_2018: 2
   omb_2017: 2
@@ -118,6 +119,7 @@ omb_skip_rows:
   omb_2003: 2
 
 omb_sheet_names:
+  omb_2020: "List 1"
   omb_2019: "List 1"
   omb_2018: "List 1"
   omb_2017: "List 1"
