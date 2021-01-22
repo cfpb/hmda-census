@@ -40,13 +40,15 @@ The Office of Management and Budget produces MSA data. Updates can include chang
 - [OMB Publications on MSA](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)
 - [OMB Delineation Bulletins](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)   
 
+The Census delineation files are used to map names to MSA/MD geographies.
+- [Census Publications on MSA](https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html)
+
 The FFIEC produces an annual Census Flat File containing demographic data and a mapping of MSA data to Census tract. 
 - [FFIEC Census Flat Files by Year](https://www.ffiec.gov/censusapp.htm) 
 	- *Note: the Census Flat File is indexed starting at 1*
 
 **Additional Census data is available, but not used in this project:**
 The Census reference files contain MSA/MD, micropolitan statistical area definitions, names, and maps to county and tract codes.
-- [Census Publications on MSA](https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html)
 - [Census API](https://www.census.gov/data/developers/data-sets.html)   
 - [County FIPS and name list](https://www.census.gov/geographies/reference-files/2018/demo/popest/2018-fips.html)
 
