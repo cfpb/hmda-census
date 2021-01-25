@@ -402,9 +402,17 @@ class CensusTools(object):
 					#rename county FIPS column to match other Census OMB files
 					census_df.rename(columns={"FIPS":"full_county_fips"}, inplace=True)
 
-				#get single name for each Metropolitan or Micropolitan statistical area using CSA over CBSA Title
+				#get single name for each Metropolitan or Micropolitan statistical area using:
+				#MD name first, CSA title second, and CBSA title third in precedence for determining MSA/MD name
+				#Metropolitan Division Title, CSA Title, CBSA Title
+				#census_df["MSA/MD Name"] = census_df.apply(lambda x: x["CSA Title"] if pd.notnull(x["CSA Title"]) else x["CBSA Title"], axis=1)
 				census_df["MSA/MD Name"] = census_df.apply(lambda x: 
-				                                   x["CSA Title"] if pd.notnull(x["CSA Title"]) else x["CBSA Title"], axis=1)
+					x["CBSA Title"] if pd.notnull(x["CBSA Title"]) else "", axis=1)
+				census_df["MSA/MD Name"] = census_df.apply(lambda x: 
+					x["CSA Title"] if pd.notnull(x["CSA Title"]) else x["MSA/MD Name"], axis=1)
+				census_df["MSA/MD Name"] = census_df.apply(lambda x: 
+					x["Metropolitan Division Title"] if pd.notnull(x["Metropolitan Division Title"]) else x["MSA/MD Name"], axis=1)
+
 
 				#Remove unneeded columns
 				census_df = census_df[["CBSA Code", "full_county_fips", "MSA/MD Name"]]
@@ -478,6 +486,10 @@ class CensusTools(object):
 								   index=False, 
 								   sep=sep)
 
+			ffiec_census_df[self.config_data["msa_name_cols"]][ffiec_census_df["MSA/MD"]!="99999"].to_csv(self.config_data["OUT_PATH"] + "msa_md_description_{year}.{end}".format(year=year, end=file_ending), 
+								   index=False, 
+								   sep=sep)
+
 			return_dict[year] = ffiec_census_df #add combined census data to return dict for handoff
 
 			if self.config_data["DEBUG"]:
@@ -487,7 +499,6 @@ class CensusTools(object):
 				print()
 
 		return return_dict
-
 
 	def load_to_db(self, schema="census", years=["2019"], sep=None, encoding="latin1"):
 		"""

@@ -17,6 +17,7 @@ ffiec_census_2002_fwf_spec: "../schemas/ffiec_census_fwf_spec_2002.csv"
 FFIEC_CENSUS_BASE_URL: "https://www.ffiec.gov/Census/Census_Flat_Files/"
 
 census_load_sql: sql/load_hmda_census.sql
+msa_name_cols: ["MSA/MD Name", "MSA/MD"]
 
 OUT_COLUMNS: {'Collection Year': "INTEGER",
              'MSA/MD': "VARCHAR(5)",
