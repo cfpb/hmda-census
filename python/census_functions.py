@@ -486,7 +486,18 @@ class CensusTools(object):
 								   index=False, 
 								   sep=sep)
 
-			ffiec_census_df[self.config_data["msa_name_cols"]][ffiec_census_df["MSA/MD"]!="99999"].to_csv(self.config_data["OUT_PATH"] + "msa_md_description_{year}.{end}".format(year=year, end=file_ending), 
+			#map FIPS State Code to letter code in column "State" for MSA/MD description file	
+			print(ffiec_census_df.columns)	
+			
+			ffiec_census_df["State"] = ffiec_census_df["State"].map(self.config_data["state_codes_rev"])
+
+
+			msa_md_desc_df = ffiec_census_df[self.config_data["msa_name_cols"]][ffiec_census_df["MSA/MD"]!="99999"].copy()
+
+			#remove duplicates. These are the records for county and tract that need to be removed from the MSA/MD list
+			msa_md_desc_df.drop_duplicates(keep="first", inplace=True)
+			msa_md_desc_df.columns = self.config_data["msa_md_desc_out_cols"]
+			msa_md_desc_df.to_csv(self.config_data["OUT_PATH"] + "msa_md_description_{year}.{end}".format(year=year, end=file_ending), 
 								   index=False, 
 								   sep=sep)
 
