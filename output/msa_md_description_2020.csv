@@ -1,0 +1,466 @@
+msa_md,msa_md_name,state
+"Montgomery-Selma-Alexander City, AL",33860,AL
+"Mobile-Daphne-Fairhope, AL",19300,AL
+"Birmingham-Hoover-Talladega, AL",13820,AL
+"Anniston-Oxford, AL",11500,AL
+"Florence-Muscle Shoals, AL",22520,AL
+"Gadsden, AL",23460,AL
+"Dothan-Ozark, AL",20020,AL
+"Tuscaloosa, AL",46220,AL
+"Huntsville-Decatur, AL",19460,AL
+"Columbus-Auburn-Opelika, GA-AL",12220,AL
+"Huntsville-Decatur, AL",26620,AL
+"Mobile-Daphne-Fairhope, AL",33660,AL
+"Columbus-Auburn-Opelika, GA-AL",17980,AL
+"Anchorage, AK",11260,AK
+"Fairbanks, AK",21820,AK
+"Sierra Vista-Douglas, AZ",43420,AZ
+"Flagstaff, AZ",22380,AZ
+"Phoenix-Mesa, AZ",38060,AZ
+"Lake Havasu City-Kingman, AZ",29420,AZ
+"Tucson-Nogales, AZ",46060,AZ
+"Prescott Valley-Prescott, AZ",39150,AZ
+"Yuma, AZ",49740,AZ
+"Fayetteville-Springdale-Rogers, AR",22220,AR
+"Little Rock-North Little Rock, AR",38220,AR
+"Jonesboro-Paragould, AR",27860,AR
+"Fort Smith, AR-OK",22900,AR
+"Memphis-Forrest City, TN-MS-AR",32820,AR
+"Little Rock-North Little Rock, AR",30780,AR
+"Hot Springs-Malvern, AR",26300,AR
+"Texarkana, TX-AR",45500,AR
+"Oakland-Berkeley-Livermore, CA",36084,CA
+"Chico, CA",17020,CA
+"Sacramento-Roseville, CA",40900,CA
+"Fresno-Madera-Hanford, CA",23420,CA
+"El Centro, CA",20940,CA
+"Bakersfield, CA",12540,CA
+"Fresno-Madera-Hanford, CA",25260,CA
+"Los Angeles-Long Beach-Glendale, CA",31084,CA
+"Fresno-Madera-Hanford, CA",31460,CA
+"San Rafael, CA",42034,CA
+"San Jose-San Francisco-Oakland, CA",32900,CA
+"Salinas, CA",41500,CA
+"San Jose-San Francisco-Oakland, CA",34900,CA
+"Anaheim-Santa Ana-Irvine, CA",11244,CA
+"Los Angeles-Long Beach, CA",40140,CA
+"San Jose-San Francisco-Oakland, CA",41940,CA
+"San Diego-Chula Vista-Carlsbad, CA",41740,CA
+"San Francisco-San Mateo-Redwood City, CA",41884,CA
+"San Jose-San Francisco-Oakland, CA",44700,CA
+"San Luis Obispo-Paso Robles, CA",42020,CA
+"Santa Maria-Santa Barbara, CA",42200,CA
+"San Jose-San Francisco-Oakland, CA",42100,CA
+"Redding-Red Bluff, CA",39820,CA
+"San Jose-San Francisco-Oakland, CA",46700,CA
+"San Jose-San Francisco-Oakland, CA",42220,CA
+"San Jose-San Francisco-Oakland, CA",33700,CA
+"Sacramento-Roseville, CA",49700,CA
+"Visalia, CA",47300,CA
+"Los Angeles-Long Beach, CA",37100,CA
+"Denver-Aurora, CO",19740,CO
+"Denver-Aurora, CO",14500,CO
+"Colorado Springs, CO",17820,CO
+"Fort Collins, CO",22660,CO
+"Grand Junction, CO",24300,CO
+"Pueblo-Cañon City, CO",39380,CO
+"Denver-Aurora, CO",24540,CO
+"New York-Newark, NY-NJ-CT-PA",14860,CT
+"Hartford-East Hartford, CT",25540,CT
+"New York-Newark, NY-NJ-CT-PA",35300,CT
+"Hartford-East Hartford, CT",35980,CT
+"Boston-Worcester-Providence, MA-RI-NH-CT",49340,CT
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",20100,DE
+"Wilmington, DE-MD-NJ",48864,DE
+"Salisbury-Cambridge, MD-DE",41540,DE
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,DC
+"Gainesville-Lake City, FL",23540,FL
+"Jacksonville-St. Marys-Palatka, FL-GA",27260,FL
+"Panama City, FL",37460,FL
+"Palm Bay-Melbourne-Titusville, FL",37340,FL
+"Fort Lauderdale-Pompano Beach-Sunrise, FL",22744,FL
+"North Port-Sarasota, FL",39460,FL
+"Homosassa Springs, FL",26140,FL
+"Cape Coral-Fort Myers-Naples, FL",34940,FL
+"Pensacola-Ferry Pass, FL-AL",37860,FL
+"Orlando-Lakeland-Deltona, FL",19660,FL
+"Tallahassee, FL",45220,FL
+"Tampa-St. Petersburg-Clearwater, FL",45300,FL
+"Sebring-Avon Park, FL",42700,FL
+"Miami-Port St. Lucie-Fort Lauderdale, FL",42680,FL
+"Orlando-Lakeland-Deltona, FL",36740,FL
+"Cape Coral-Fort Myers-Naples, FL",15980,FL
+"North Port-Sarasota, FL",35840,FL
+"Ocala, FL",36100,FL
+"Miami-Port St. Lucie-Fort Lauderdale, FL",38940,FL
+"Miami-Miami Beach-Kendall, FL",33124,FL
+"Crestview-Fort Walton Beach-Destin, FL",18880,FL
+"West Palm Beach-Boca Raton-Boynton Beach, FL",48424,FL
+"Orlando-Lakeland-Deltona, FL",29460,FL
+"Orlando-Lakeland-Deltona, FL",45540,FL
+"Atlanta--Athens-Clarke County--Sandy Springs, GA-AL",12060,GA
+"Macon-Bibb County--Warner Robins, GA",31420,GA
+"Brunswick, GA",15260,GA
+"Valdosta, GA",46660,GA
+"Savannah-Hinesville-Statesboro, GA",42340,GA
+"Augusta-Richmond County, GA-SC",12260,GA
+"Chattanooga-Cleveland-Dalton, TN-GA",16860,GA
+"Columbus-Auburn-Opelika, GA-AL",17980,GA
+"Atlanta--Athens-Clarke County--Sandy Springs, GA-AL",12020,GA
+"Albany, GA",10500,GA
+"Atlanta--Athens-Clarke County--Sandy Springs, GA-AL",40660,GA
+"Atlanta--Athens-Clarke County--Sandy Springs, GA-AL",23580,GA
+"Macon-Bibb County--Warner Robins, GA",47580,GA
+"Savannah-Hinesville-Statesboro, GA",25980,GA
+"Chattanooga-Cleveland-Dalton, TN-GA",19140,GA
+"Urban Honolulu, HI",46520,HI
+"Kahului-Wailuku-Lahaina, HI",27980,HI
+"Boise City-Mountain Home-Ontario, ID-OR",14260,ID
+"Pocatello, ID",38540,ID
+"Idaho Falls-Rexburg-Blackfoot, ID",26820,ID
+"Logan, UT-ID",30860,ID
+"Twin Falls, ID",46300,ID
+"Spokane-Spokane Valley-Coeur d'Alene, WA-ID",17660,ID
+"Lewiston, ID-WA",30300,ID
+"Cape Girardeau-Sikeston, MO-IL",16020,IL
+"St. Louis-St. Charles-Farmington, MO-IL",41180,IL
+"Rockford-Freeport-Rochelle, IL",40420,IL
+"Champaign-Urbana, IL",16580,IL
+"Chicago-Naperville-Evanston, IL",16984,IL
+"Elgin, IL",20994,IL
+"Peoria, IL",37900,IL
+"Davenport-Moline, IA-IL",19340,IL
+"Carbondale-Marion, IL",16060,IL
+"Chicago-Naperville, IL-IN-WI",28100,IL
+"Lake County-Kenosha County, IL-WI",29404,IL
+"Bloomington-Pontiac, IL",14010,IL
+"Decatur, IL",19500,IL
+"Springfield-Jacksonville-Lincoln, IL",44100,IL
+"Danville, IL",19180,IL
+"Fort Wayne-Huntington-Auburn, IN",23060,IN
+"Indianapolis-Carmel-Muncie, IN",18020,IN
+"Lafayette-West Lafayette-Frankfort, IN",29200,IN
+"Indianapolis-Carmel-Muncie, IN",26900,IN
+"Louisville/Jefferson County--Elizabethtown--Bardstown, KY-IN",31140,IN
+"Terre Haute, IN",45460,IN
+"Cincinnati-Wilmington-Maysville, OH-KY-IN",17140,IN
+"Indianapolis-Carmel-Muncie, IN",34620,IN
+"South Bend-Elkhart-Mishawaka, IN-MI",21140,IN
+"Kokomo-Peru, IN",29020,IN
+"Gary, IN",23844,IN
+"Chicago-Naperville, IL-IN-WI",33140,IN
+"Bloomington-Bedford, IN",14020,IN
+"Evansville, IN-KY",21780,IN
+"South Bend-Elkhart-Mishawaka, IN-MI",43780,IN
+"Cedar Rapids-Iowa City, IA",16300,IA
+"Waterloo-Cedar Falls, IA",47940,IA
+"Des Moines-Ames-West Des Moines, IA",11180,IA
+"Des Moines-Ames-West Des Moines, IA",19780,IA
+"Dubuque, IA",20220,IA
+"Omaha-Council Bluffs-Fremont, NE-IA",36540,IA
+"Cedar Rapids-Iowa City, IA",26980,IA
+"Davenport-Moline, IA-IL",19340,IA
+"Sioux City, IA-NE-SD",43580,IA
+"Wichita-Winfield, KS",48620,KS
+"Kansas City-Overland Park-Kansas City, MO-KS",41140,KS
+"Kansas City-Overland Park-Kansas City, MO-KS",29940,KS
+"Manhattan, KS",31740,KS
+"Topeka, KS",45820,KS
+"Kansas City-Overland Park-Kansas City, MO-KS",28140,KS
+"Bowling Green-Glasgow, KY",14540,KY
+"Cincinnati-Wilmington-Maysville, OH-KY-IN",17140,KY
+"Lexington-Fayette--Richmond--Frankfort, KY",30460,KY
+"Charleston-Huntington-Ashland, WV-OH-KY",26580,KY
+"Louisville/Jefferson County--Elizabethtown--Bardstown, KY-IN",31140,KY
+"Clarksville, TN-KY",17300,KY
+"Owensboro, KY",36980,KY
+"Louisville/Jefferson County--Elizabethtown--Bardstown, KY-IN",21060,KY
+"Evansville, IN-KY",21780,KY
+"Lafayette-Opelousas-Morgan City, LA",29180,LA
+"Baton Rouge, LA",12940,LA
+"Shreveport-Bossier City-Minden, LA",43340,LA
+"Lake Charles-Jennings, LA",29340,LA
+"Alexandria, LA",10780,LA
+"New Orleans-Metairie-Hammond, LA-MS",35380,LA
+"Houma-Thibodaux, LA",26380,LA
+"Monroe-Ruston, LA",33740,LA
+"New Orleans-Metairie-Hammond, LA-MS",25220,LA
+"Portland-Lewiston-South Portland, ME",30340,ME
+"Portland-Lewiston-South Portland, ME",38860,ME
+"Bangor, ME",12620,ME
+"Cumberland, MD-WV",19060,MD
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",12580,MD
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,MD
+"Wilmington, DE-MD-NJ",48864,MD
+"Frederick-Gaithersburg-Rockville, MD",23224,MD
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",15680,MD
+"Salisbury-Cambridge, MD-DE",41540,MD
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",25180,MD
+"Boston-Worcester-Providence, MA-RI-NH-CT",12700,MA
+"Pittsfield, MA",38340,MA
+"Boston-Worcester-Providence, MA-RI-NH-CT",39300,MA
+"Cambridge-Newton-Framingham, MA",15764,MA
+"Springfield, MA",44140,MA
+"Boston, MA",14454,MA
+"Boston-Worcester-Providence, MA-RI-NH-CT",49340,MA
+"Saginaw-Midland-Bay City, MI",13020,MI
+"South Bend-Elkhart-Mishawaka, IN-MI",35660,MI
+"Kalamazoo-Battle Creek-Portage, MI",12980,MI
+"South Bend-Elkhart-Mishawaka, IN-MI",43780,MI
+"Lansing-East Lansing, MI",29620,MI
+"Detroit-Warren-Ann Arbor, MI",22420,MI
+"Grand Rapids-Kentwood-Muskegon, MI",24340,MI
+"Jackson, MI",27100,MI
+"Kalamazoo-Battle Creek-Portage, MI",28020,MI
+"Warren-Troy-Farmington Hills, MI",47664,MI
+"Saginaw-Midland-Bay City, MI",33220,MI
+"Detroit-Warren-Ann Arbor, MI",33780,MI
+"Grand Rapids-Kentwood-Muskegon, MI",34740,MI
+"Saginaw-Midland-Bay City, MI",40980,MI
+"Detroit-Warren-Ann Arbor, MI",11460,MI
+"Detroit-Dearborn-Livonia, MI",19804,MI
+"Minneapolis-St. Paul, MN-WI",33460,MN
+"Minneapolis-St. Paul, MN-WI",41060,MN
+"Mankato-New Ulm, MN",31860,MN
+"Duluth, MN-WI",20260,MN
+"Fargo-Wahpeton, ND-MN",22020,MN
+"Rochester-Austin, MN",40340,MN
+"La Crosse-Onalaska, WI-MN",29100,MN
+"Grand Forks, ND-MN",24220,MN
+"Jackson-Vicksburg-Brookhaven, MS",27140,MS
+"Hattiesburg-Laurel, MS",25620,MS
+"Memphis-Forrest City, TN-MS-AR",32820,MS
+"Gulfport-Biloxi, MS",25060,MS
+"Kansas City-Overland Park-Kansas City, MO-KS",41140,MO
+"Kansas City-Overland Park-Kansas City, MO-KS",28140,MO
+"Cape Girardeau-Sikeston, MO-IL",16020,MO
+"Columbia-Moberly-Mexico, MO",17860,MO
+"Jefferson City, MO",27620,MO
+"Springfield, MO",44180,MO
+"St. Louis-St. Charles-Farmington, MO-IL",41180,MO
+"Joplin-Miami, MO-OK",27900,MO
+"Billings, MT",13740,MT
+"Great Falls, MT",24500,MT
+"Missoula, MT",33540,MT
+"Omaha-Council Bluffs-Fremont, NE-IA",36540,NE
+"Sioux City, IA-NE-SD",43580,NE
+"Grand Island, NE",24260,NE
+"Lincoln-Beatrice, NE",30700,NE
+"Las Vegas-Henderson, NV",29820,NV
+"Reno-Carson City-Fernley, NV",39900,NV
+"Reno-Carson City-Fernley, NV",16180,NV
+"Boston-Worcester-Providence, MA-RI-NH-CT",31700,NH
+"Rockingham County-Strafford County, NH",40484,NH
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",12100,NJ
+"New York-Jersey City-White Plains, NY-NJ",35614,NJ
+"Camden, NJ",15804,NJ
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",36140,NJ
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",47220,NJ
+"Newark, NJ-PA",35084,NJ
+"New York-Newark, NY-NJ-CT-PA",45940,NJ
+"New Brunswick-Lakewood, NJ",35154,NJ
+"Wilmington, DE-MD-NJ",48864,NJ
+"Allentown-Bethlehem-Easton, PA-NJ",10900,NJ
+"Albuquerque-Santa Fe-Las Vegas, NM",10740,NM
+"El Paso-Las Cruces, TX-NM",29740,NM
+"Farmington, NM",22140,NM
+"Albuquerque-Santa Fe-Las Vegas, NM",42140,NM
+"Albany-Schenectady, NY",10580,NY
+"New York-Jersey City-White Plains, NY-NJ",35614,NY
+"Binghamton, NY",13780,NY
+"Elmira-Corning, NY",21300,NY
+"New York-Newark, NY-NJ-CT-PA",39100,NY
+"Buffalo-Cheektowaga-Olean, NY",15380,NY
+"Utica-Rome, NY",46540,NY
+"Watertown-Fort Drum, NY",48060,NY
+"Rochester-Batavia-Seneca Falls, NY",40380,NY
+"Syracuse-Auburn, NY",45060,NY
+"Nassau County-Suffolk County, NY",35004,NY
+"Ithaca-Cortland, NY",27060,NY
+"New York-Newark, NY-NJ-CT-PA",28740,NY
+"Albany-Schenectady, NY",24020,NY
+"Greensboro--Winston-Salem--High Point, NC",15500,NC
+"Hickory-Lenoir-Morganton, NC",25860,NC
+"Charlotte-Concord, NC-SC",16740,NC
+"Myrtle Beach-Conway, SC-NC",34820,NC
+"Asheville-Marion-Brevard, NC",11700,NC
+"Virginia Beach-Norfolk, VA-NC",47260,NC
+"Raleigh-Durham-Cary, NC",20500,NC
+"New Bern-Morehead City, NC",35100,NC
+"Fayetteville-Sanford-Lumberton, NC",22180,NC
+"Greensboro--Winston-Salem--High Point, NC",49180,NC
+"Rocky Mount-Wilson-Roanoke Rapids, NC",40580,NC
+"Raleigh-Durham-Cary, NC",39580,NC
+"Greensboro--Winston-Salem--High Point, NC",24660,NC
+"Wilmington, NC",48900,NC
+"Jacksonville, NC",27340,NC
+"Greenville-Kinston-Washington, NC",24780,NC
+"Goldsboro, NC",24140,NC
+"Bismarck, ND",13900,ND
+"Fargo-Wahpeton, ND-MN",22020,ND
+"Grand Forks, ND-MN",24220,ND
+"Lima-Van Wert-Celina, OH",30620,OH
+"Wheeling, WV-OH",48540,OH
+"Cincinnati-Wilmington-Maysville, OH-KY-IN",17140,OH
+"Cleveland-Akron-Canton, OH",15940,OH
+"Dayton-Springfield-Kettering, OH",44220,OH
+"Cleveland-Akron-Canton, OH",17460,OH
+"Columbus-Marion-Zanesville, OH",18140,OH
+"Toledo-Findlay-Tiffin, OH",45780,OH
+"Dayton-Springfield-Kettering, OH",19430,OH
+"Pittsburgh-New Castle-Weirton, PA-OH-WV",48260,OH
+"Charleston-Huntington-Ashland, WV-OH-KY",26580,OH
+"Youngstown-Warren, OH-PA",49660,OH
+"Cleveland-Akron-Canton, OH",10420,OH
+"Mansfield-Ashland-Bucyrus, OH",31900,OH
+"Oklahoma City-Shawnee, OK",36420,OK
+"Lawton, OK",30020,OK
+"Tulsa-Muskogee-Bartlesville, OK",46140,OK
+"Enid, OK",21420,OK
+"Fort Smith, AR-OK",22900,OK
+"Portland-Vancouver-Salem, OR-WA",18700,OR
+"Portland-Vancouver-Salem, OR-WA",38900,OR
+"Bend-Prineville, OR",13460,OR
+"Medford-Grants Pass, OR",32780,OR
+"Medford-Grants Pass, OR",24420,OR
+"Eugene-Springfield, OR",21660,OR
+"Portland-Vancouver-Salem, OR-WA",10540,OR
+"Portland-Vancouver-Salem, OR-WA",41420,OR
+"Harrisburg-York-Lebanon, PA",23900,PA
+"Pittsburgh-New Castle-Weirton, PA-OH-WV",38300,PA
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",39740,PA
+"Altoona-Huntingdon, PA",11020,PA
+"Montgomery County-Bucks County-Chester County, PA",33874,PA
+"Johnstown-Somerset, PA",27780,PA
+"Allentown-Bethlehem-Easton, PA-NJ",10900,PA
+"State College-DuBois, PA",44300,PA
+"Bloomsburg-Berwick-Sunbury, PA",14100,PA
+"Harrisburg-York-Lebanon, PA",25420,PA
+"Philadelphia, PA",37964,PA
+"Erie-Meadville, PA",21500,PA
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",16540,PA
+"Scranton--Wilkes-Barre, PA",42540,PA
+"Lancaster, PA",29540,PA
+"Harrisburg-York-Lebanon, PA",30140,PA
+"Williamsport-Lock Haven, PA",48700,PA
+"Youngstown-Warren, OH-PA",49660,PA
+"New York-Newark, NY-NJ-CT-PA",20700,PA
+"Newark, NJ-PA",35084,PA
+"Harrisburg-York-Lebanon, PA",49620,PA
+"Boston-Worcester-Providence, MA-RI-NH-CT",39300,RI
+"Augusta-Richmond County, GA-SC",12260,SC
+"Greenville-Spartanburg-Anderson, SC",24860,SC
+"Hilton Head Island-Bluffton, SC",25940,SC
+"Charleston-North Charleston, SC",16700,SC
+"Columbia-Orangeburg-Newberry, SC",17900,SC
+"Charlotte-Concord, NC-SC",16740,SC
+"Sumter, SC",44940,SC
+"Florence, SC",22500,SC
+"Myrtle Beach-Conway, SC-NC",34820,SC
+"Greenville-Spartanburg-Anderson, SC",43900,SC
+"Sioux Falls, SD",43620,SD
+"Rapid City-Spearfish, SD",39660,SD
+"Sioux City, IA-NE-SD",43580,SD
+"Knoxville-Morristown-Sevierville, TN",28940,TN
+"Chattanooga-Cleveland-Dalton, TN-GA",17420,TN
+"Nashville-Davidson--Murfreesboro, TN",34980,TN
+"Johnson City-Kingsport-Bristol, TN-VA",27740,TN
+"Jackson-Brownsville, TN",27180,TN
+"Memphis-Forrest City, TN-MS-AR",32820,TN
+"Knoxville-Morristown-Sevierville, TN",34100,TN
+"Chattanooga-Cleveland-Dalton, TN-GA",16860,TN
+"Johnson City-Kingsport-Bristol, TN-VA",28700,TN
+"Clarksville, TN-KY",17300,TN
+"Wichita Falls, TX",48660,TX
+"Amarillo-Pampa-Borger, TX",11100,TX
+"San Antonio-New Braunfels-Pearsall, TX",41700,TX
+"Houston-The Woodlands, TX",26420,TX
+"Austin-Round Rock-Georgetown, TX",12420,TX
+"Killeen-Temple, TX",28660,TX
+"Texarkana, TX-AR",45500,TX
+"College Station-Bryan, TX",17780,TX
+"Abilene, TX",10180,TX
+"Brownsville-Harlingen-Raymondville, TX",15180,TX
+"Dallas-Plano-Irving, TX",19124,TX
+"Lubbock-Plainview-Levelland, TX",31180,TX
+"Midland-Odessa, TX",36220,TX
+"El Paso-Las Cruces, TX-NM",21340,TX
+"Waco, TX",47380,TX
+"Victoria-Port Lavaca, TX",47020,TX
+"Dallas-Fort Worth, TX-OK",43300,TX
+"Longview, TX",30980,TX
+"Beaumont-Port Arthur, TX",13140,TX
+"McAllen-Edinburg, TX",32580,TX
+"San Angelo, TX",41660,TX
+"Fort Worth-Arlington-Grapevine, TX",23104,TX
+"Midland-Odessa, TX",33260,TX
+"Corpus Christi-Kingsville-Alice, TX",18580,TX
+"Tyler-Jacksonville, TX",46340,TX
+"Laredo, TX",29700,TX
+"Salt Lake City-Provo-Orem, UT",36260,UT
+"Logan, UT-ID",30860,UT
+"Salt Lake City-Provo-Orem, UT",39340,UT
+"Salt Lake City-Provo-Orem, UT",41620,UT
+"St. George, UT",41100,UT
+"Burlington-South Burlington-Barre, VT",15540,VT
+"Charlottesville, VA",16820,VA
+"Richmond, VA",40060,VA
+"Lynchburg, VA",31340,VA
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,VA
+"Harrisonburg-Staunton, VA",44420,VA
+"Roanoke, VA",40220,VA
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",49020,VA
+"Blacksburg-Christiansburg, VA",13980,VA
+"Virginia Beach-Norfolk, VA-NC",47260,VA
+"Harrisonburg-Staunton, VA",25500,VA
+"Johnson City-Kingsport-Bristol, TN-VA",28700,VA
+"Lewiston, ID-WA",30300,WA
+"Kennewick-Richland-Walla Walla, WA",28420,WA
+"Wenatchee, WA",48300,WA
+"Portland-Vancouver-Salem, OR-WA",38900,WA
+"Portland-Vancouver-Salem, OR-WA",31020,WA
+"Seattle-Bellevue-Kent, WA",42644,WA
+"Seattle-Tacoma, WA",14740,WA
+"Tacoma-Lakewood, WA",45104,WA
+"Seattle-Tacoma, WA",34580,WA
+"Spokane-Spokane Valley-Coeur d'Alene, WA-ID",44060,WA
+"Seattle-Tacoma, WA",36500,WA
+"Kennewick-Richland-Walla Walla, WA",47460,WA
+"Bellingham, WA",13380,WA
+"Yakima, WA",49420,WA
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",25180,WV
+"Charleston-Huntington-Ashland, WV-OH-KY",16620,WV
+"Pittsburgh-New Castle-Weirton, PA-OH-WV",48260,WV
+"Charleston-Huntington-Ashland, WV-OH-KY",26580,WV
+"Beckley, WV",13220,WV
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",49020,WV
+"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,WV
+"Wheeling, WV-OH",48540,WV
+"Cumberland, MD-WV",19060,WV
+"Morgantown-Fairmont, WV",34060,WV
+"Parkersburg-Marietta-Vienna, WV-OH",37620,WV
+"Green Bay-Shawano, WI",24580,WI
+"Appleton-Oshkosh-Neenah, WI",11540,WI
+"Eau Claire-Menomonie, WI",20740,WI
+"Madison-Janesville-Beloit, WI",31540,WI
+"Duluth, MN-WI",20260,WI
+"Fond du Lac, WI",22540,WI
+"Lake County-Kenosha County, IL-WI",29404,WI
+"La Crosse-Onalaska, WI-MN",29100,WI
+"Wausau-Stevens Point-Wisconsin Rapids, WI",48140,WI
+"Milwaukee-Racine-Waukesha, WI",33340,WI
+"Minneapolis-St. Paul, MN-WI",33460,WI
+"Milwaukee-Racine-Waukesha, WI",39540,WI
+"Madison-Janesville-Beloit, WI",27500,WI
+"Sheboygan, WI",43100,WI
+"Appleton-Oshkosh-Neenah, WI",36780,WI
+"Cheyenne, WY",16940,WY
+"Casper, WY",16220,WY
+"Ponce-Yauco-Coamo, PR",38660,PR
+"Aguadilla-Isabela, PR",10380,PR
+"San Juan-Bayamón, PR",41980,PR
+"San Juan-Bayamón, PR",11640,PR
+"San Juan-Bayamón, PR",25020,PR
+"Mayagüez-San Germán, PR",41900,PR
+"Ponce-Yauco-Coamo, PR",49500,PR
+"Mayagüez-San Germán, PR",32420,PR

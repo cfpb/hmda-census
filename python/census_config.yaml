@@ -1,5 +1,5 @@
 DEBUG: True
-SEP: "|"
+SEP: ","
 OUT_PATH: "../output/"
 DATA_PATH: "../data/"
 SQL_PATH: "sql/"
@@ -19,6 +19,7 @@ FFIEC_CENSUS_BASE_URL: "https://www.ffiec.gov/Census/Census_Flat_Files/"
 census_load_sql: sql/load_hmda_census.sql
 msa_name_cols: ["MSA/MD Name", "MSA/MD", "State"] 
 msa_md_desc_out_cols: ["msa_md", "msa_md_name", "state"]
+
 OUT_COLUMNS: {'Collection Year': "INTEGER",
              'MSA/MD': "VARCHAR(5)",
              'State': "VARCHAR(2)",

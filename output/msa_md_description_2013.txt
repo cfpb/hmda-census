@@ -5,7 +5,7 @@ Anniston-Oxford-Jacksonville, AL|11500|AL
 Florence-Muscle Shoals, AL|22520|AL
 Gadsden, AL|23460|AL
 Dothan-Enterprise-Ozark, AL|20020|AL
-|46220|AL
+nan|46220|AL
 Tuscaloosa, AL|46220|AL
 Huntsville-Decatur-Albertville, AL|19460|AL
 Columbus-Auburn-Opelika, GA-AL|12220|AL
@@ -26,7 +26,7 @@ Jonesboro-Paragould, AR|27860|AR
 Fort Smith, AR-OK|22900|AR
 Memphis-Forrest City, TN-MS-AR|32820|AR
 Little Rock-North Little Rock, AR|30780|AR
-|22900|AR
+nan|22900|AR
 Hot Springs-Malvern, AR|26300|AR
 Texarkana, TX-AR|45500|AR
 Oakland-Hayward-Berkeley, CA|36084|CA
@@ -116,7 +116,7 @@ Idaho Falls-Rexburg-Blackfoot, ID|26820|ID
 Logan, UT-ID|30860|ID
 Spokane-Spokane Valley-Coeur d'Alene, WA-ID|17660|ID
 Lewiston, ID-WA|30300|ID
-|38540|ID
+nan|38540|ID
 Cape Girardeau-Sikeston, MO-IL|16020|IL
 St. Louis-St. Charles-Farmington, MO-IL|41180|IL
 Rockford-Freeport-Rochelle, IL|40420|IL
@@ -140,9 +140,9 @@ Terre Haute, IN|45460|IN
 Cincinnati-Wilmington-Maysville, OH-KY-IN|17140|IN
 Indianapolis-Carmel-Muncie, IN|34620|IN
 South Bend-Elkhart-Mishawaka, IN-MI|21140|IN
-|17140|IN
-|21780|IN
-|14020|IN
+nan|17140|IN
+nan|21780|IN
+nan|14020|IN
 Kokomo-Peru, IN|29020|IN
 Gary, IN|23844|IN
 Chicago-Naperville, IL-IN-WI|33140|IN
@@ -150,7 +150,7 @@ Indianapolis-Carmel-Muncie, IN|11300|IN
 Bloomington-Bedford, IN|14020|IN
 Evansville, IN-KY|21780|IN
 South Bend-Elkhart-Mishawaka, IN-MI|43780|IN
-|29020|IN
+nan|29020|IN
 Cedar Rapids-Iowa City, IA|16300|IA
 Waterloo-Cedar Falls, IA|47940|IA
 Des Moines-Ames-West Des Moines, IA|19780|IA
@@ -175,7 +175,7 @@ Owensboro, KY|36980|KY
 Bowling Green-Glasgow, KY|14540|KY
 Louisville/Jefferson County--Elizabethtown--Madison, KY-IN|21060|KY
 Evansville, IN-KY|21780|KY
-|21780|KY
+nan|21780|KY
 Baton Rouge, LA|12940|LA
 Shreveport-Bossier City, LA|43340|LA
 Lake Charles, LA|29340|LA
@@ -214,7 +214,7 @@ Kalamazoo-Battle Creek-Portage, MI|28020|MI
 Warren-Troy-Farmington Hills, MI|47644|MI
 Detroit-Warren-Ann Arbor, MI|33780|MI
 Grand Rapids-Wyoming-Muskegon, MI|34740|MI
-|24340|MI
+nan|24340|MI
 Grand Rapids-Wyoming-Muskegon, MI|26100|MI
 Saginaw-Midland-Bay City, MI|40980|MI
 Detroit-Warren-Ann Arbor, MI|11460|MI
@@ -230,10 +230,10 @@ Grand Forks, ND-MN|24220|MN
 Jackson-Vicksburg-Brookhaven, MS|27140|MS
 Memphis-Forrest City, TN-MS-AR|32820|MS
 Hattiesburg, MS|25620|MS
-|37700|MS
+nan|37700|MS
 Gulfport-Biloxi-Pascagoula, MS|25060|MS
 Gulfport-Biloxi-Pascagoula, MS|37700|MS
-|25060|MS
+nan|25060|MS
 Kansas City-Overland Park-Kansas City, MO-KS|41140|MO
 Kansas City-Overland Park-Kansas City, MO-KS|28140|MO
 Cape Girardeau-Sikeston, MO-IL|16020|MO
@@ -241,10 +241,10 @@ Columbia-Moberly-Mexico, MO|17860|MO
 Jefferson City, MO|27620|MO
 Springfield-Branson, MO|44180|MO
 St. Louis-St. Charles-Farmington, MO-IL|41180|MO
-|17860|MO
+nan|17860|MO
 Joplin-Miami, MO-OK|27900|MO
 Fayetteville-Springdale-Rogers, AR-MO|22220|MO
-|41180|MO
+nan|41180|MO
 Billings, MT|13740|MT
 Great Falls, MT|24500|MT
 Missoula, MT|33540|MT
@@ -288,7 +288,7 @@ New York-Newark, NY-NJ-CT-PA|28740|NY
 Albany-Schenectady, NY|24020|NY
 Greensboro--Winston-Salem--High Point, NC|15500|NC
 Hickory-Lenoir, NC|25860|NC
-|16740|NC
+nan|16740|NC
 Myrtle Beach-Conway, SC-NC|48900|NC
 Asheville-Brevard, NC|11700|NC
 Charlotte-Concord, NC-SC|16740|NC
@@ -298,7 +298,7 @@ Virginia Beach-Norfolk, VA-NC|47260|NC
 Greensboro--Winston-Salem--High Point, NC|49180|NC
 Rocky Mount-Wilson-Roanoke Rapids, NC|40580|NC
 Raleigh-Durham-Chapel Hill, NC|39580|NC
-|24780|NC
+nan|24780|NC
 Greensboro--Winston-Salem--High Point, NC|24660|NC
 Wilmington, NC|48900|NC
 Jacksonville, NC|27340|NC
@@ -321,7 +321,7 @@ Pittsburgh-New Castle-Weirton, PA-OH-WV|44600|OH
 Charleston-Huntington-Ashland, WV-OH-KY|26580|OH
 Youngstown-Warren, OH-PA|49660|OH
 Cleveland-Akron-Canton, OH|10420|OH
-|19380|OH
+nan|19380|OH
 Mansfield-Ashland-Bucyrus, OH|31900|OH
 Parkersburg-Marietta-Vienna, WV-OH|37620|OH
 Oklahoma City-Shawnee, OK|36420|OK
@@ -375,7 +375,7 @@ Knoxville-Morristown-Sevierville, TN|34100|TN
 Chattanooga-Cleveland-Dalton, TN-GA-AL|16860|TN
 Johnson City-Kingsport-Bristol, TN-VA|28700|TN
 Clarksville, TN-KY|17300|TN
-|17300|TN
+nan|17300|TN
 Corpus Christi-Kingsville-Alice, TX|18580|TX
 Wichita Falls, TX|48660|TX
 Amarillo-Borger, TX|11100|TX
@@ -390,7 +390,7 @@ Abilene, TX|10180|TX
 Brownsville-Harlingen-Raymondville, TX|15180|TX
 Dallas-Plano-Irving, TX|19124|TX
 Lubbock-Levelland, TX|31180|TX
-|19124|TX
+nan|19124|TX
 Midland-Odessa, TX|36220|TX
 El Paso-Las Cruces, TX-NM|21340|TX
 Dallas-Fort Worth, TX-OK|43300|TX
@@ -401,7 +401,7 @@ San Angelo, TX|41660|TX
 Fort Worth-Arlington, TX|23104|TX
 Waco, TX|47380|TX
 Midland-Odessa, TX|33260|TX
-|26420|TX
+nan|26420|TX
 Tyler-Jacksonville, TX|46340|TX
 Laredo, TX|29700|TX
 Logan, UT-ID|30860|UT
@@ -415,14 +415,14 @@ Richmond, VA|40060|VA
 Lynchburg, VA|31340|VA
 Washington-Arlington-Alexandria, DC-VA-MD-WV|47894|VA
 Roanoke, VA|40220|VA
-|40060|VA
+nan|40060|VA
 Washington-Baltimore-Arlington, DC-MD-VA-WV-PA|49020|VA
 Blacksburg-Christiansburg-Radford, VA|13980|VA
 Virginia Beach-Norfolk, VA-NC|47260|VA
 Danville, VA|19260|VA
 Harrisonburg-Staunton-Waynesboro, VA|25500|VA
 Johnson City-Kingsport-Bristol, TN-VA|28700|VA
-|47260|VA
+nan|47260|VA
 Lewiston, ID-WA|30300|WA
 Kennewick-Richland, WA|28420|WA
 Wenatchee, WA|48300|WA
@@ -445,8 +445,8 @@ Washington-Arlington-Alexandria, DC-VA-MD-WV|47894|WV
 Wheeling, WV-OH|48540|WV
 Cumberland, MD-WV|19060|WV
 Morgantown-Fairmont, WV|34060|WV
-|25180|WV
-|37620|WV
+nan|25180|WV
+nan|37620|WV
 Parkersburg-Marietta-Vienna, WV-OH|37620|WV
 Green Bay-Shawano, WI|24580|WI
 Appleton-Oshkosh-Neenah, WI|11540|WI
