@@ -494,7 +494,6 @@ class CensusTools(object):
 																				(ffiec_census_df["MSA/MD Name"]!="")].copy()
 
 			#remove duplicates. These are the records for county and tract that need to be removed from the MSA/MD list
-			msa_md_desc_df.drop_duplicates(inplace=True)
 			msa_md_desc_df.columns = self.config_data["msa_md_desc_out_cols"]
 			msa_md_desc_df.drop_duplicates(inplace=True)
 			msa_md_desc_df.to_csv(self.config_data["OUT_PATH"] + "msa_md_description_{year}.{end}".format(year=year, end=file_ending), 
