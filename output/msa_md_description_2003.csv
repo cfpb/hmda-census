@@ -1,597 +1,68 @@
 msa_md,msa_md_name,state
-nan,52400,DE
-nan,51600,DE
-nan,99990,DE
-nan,10000,DE
-nan,04500,DE
-nan,26500,DE
-nan,21800,DE
-nan,28800,DE
-nan,20300,DE
-nan,05800,DE
-nan,34400,DE
-nan,52400,DC
-nan,20300,DC
-nan,99990,DC
-nan,18000,DC
-nan,10000,DC
-nan,86000,DC
-nan,99990,KS
 "Topeka, KS",99990,KS
 "Salina, KS",99990,KS
-nan,03800,KS
-nan,99990,KY
 "Glasgow, KY",99990,KY
-nan,99990,LA
 "Lake Charles-Jennings, LA",99990,LA
 "Ardmore, OK",99990,OK
-nan,99990,OK
-nan,26200,OK
 "Fort Smith, AR-OK",99990,OK
 "Stillwater, OK",99990,OK
-nan,62000,OK
 "Tulsa-Bartlesville, OK",62000,OK
 "Fort Smith, AR-OK",62000,OK
 "Duncan, OK",62000,OK
 "Guymon, OK",62000,OK
-nan,41200,OK
-nan,85200,OK
-nan,93600,OK
-nan,99990,VT
-nan,25800,VT
-nan,37000,VT
-nan,27200,VT
-nan,49200,VT
-nan,44000,VT
-nan,62400,VT
-nan,83600,VT
 "Lynchburg, VA",99990,VA
-nan,99990,VA
-"Washington-Arlington-Alexandria, DC-VA-MD-WV",99990,VA
+"Washington-Baltimore-Northern Virginia, DC-MD-VA-WV",99990,VA
 "Charlottesville, VA",99990,VA
-nan,44000,VA
-nan,27200,VA
-nan,25800,VA
-nan,57750,AS
-nan,99990,AS
-nan,16200,AS
-nan,69200,AS
-nan,28400,AS
-nan,06800,AS
-nan,44800,AS
-nan,73600,AS
-nan,49400,AS
-nan,71200,AS
-nan,87200,AS
-nan,59450,AS
-nan,67800,AS
-nan,73200,AS
-nan,81200,AS
-nan,74600,AS
-nan,74800,AS
-nan,74000,AS
-nan,74850,AS
-nan,66900,AS
-nan,75000,AS
-nan,51700,AS
-nan,93400,
-nan,99990,
-nan,87800,
-nan,87350,
-nan,92700,
-nan,20800,
-nan,11250,
-nan,17200,
-nan,26700,
-nan,29950,
-nan,65600,
-nan,30600,
-nan,80400,
-nan,11600,
-nan,19300,
-nan,32800,
-nan,88800,
-nan,54800,
-nan,55200,
-nan,92400,
-nan,21901,
-nan,91601,
-nan,99991,
-nan,88401,DE
-nan,29001,KS
-nan,99991,KS
-nan,60151,KS
 "Wichita-Winfield, KS",99991,KS
-nan,49001,KS
-nan,26801,KS
 "Emporia, KS",26801,KS
 "Topeka, KS",99991,KS
-nan,65801,KS
-nan,36001,KS
-nan,53451,KS
-nan,60801,KS
-nan,20201,KS
-nan,82401,KS
-nan,82801,KS
-nan,59601,KS
-nan,27001,KS
-nan,75101,KS
-nan,57901,KS
-nan,27101,KS
-nan,50001,KS
-nan,27501,KS
-nan,89601,KS
-nan,82801,KY
-nan,39801,KY
-nan,99991,KY
-nan,36001,KY
-nan,27101,KY
-nan,60801,KY
-nan,75101,KY
-nan,59601,KY
 "Somerset, KY",99991,KY
 "Lexington-Fayette--Frankfort--Richmond, KY",99991,KY
-nan,20201,KY
-nan,99991,MT
-nan,05201,MT
-nan,46801,MT
-nan,75201,MT
-nan,15601,MT
-nan,18001,MT
-nan,05001,MT
-nan,06001,MT
-nan,01201,MT
 "Kearney, NE",99991,NE
-nan,75201,NE
-nan,99991,NE
 "Grand Island, NE",99991,NE
 "Norfolk, NE",99991,NE
-nan,05201,NE
-nan,18001,NE
-nan,46801,NE
-nan,01201,NE
-nan,06001,NE
-nan,05001,NE
-nan,99991,NV
-nan,18001,NV
-nan,05201,NV
-nan,05001,NV
-nan,46801,NV
-nan,06001,NV
-nan,15601,NV
 "Claremont-Lebanon, NH-VT",99991,NH
-nan,99991,NH
-nan,99991,VT
-nan,33201,VT
-nan,10801,AS
-nan,99991,AS
-nan,63401,AS
-nan,68801,
-nan,14001,
-nan,70401,
-nan,16001,
-nan,19601,
-nan,37401,
-nan,10401,
-nan,20401,
-nan,78801,
-nan,61201,
-nan,68801,PR
-nan,61201,PR
-nan,27601,
-nan,34801,
-nan,45201,
-nan,83201,
-nan,39201,
-nan,16401,
-nan,52801,
-nan,23301,
-nan,38501,
-nan,29601,
-nan,10201,
-nan,24401,
-nan,78001,
-nan,89201,
-nan,21201,
-nan,22001,
-nan,35001,
-nan,13601,
-nan,59201,
-nan,77201,
-nan,99992,
-nan,90402,
-nan,41502,
-nan,37602,
-nan,99992,AL
-nan,37602,AL
 "Huntsville-Decatur, AL",99992,AL
-nan,90402,AL
-nan,84402,AL
-nan,99992,AK
 "Fairbanks, AK",37602,AK
-nan,99992,DE
-nan,16402,DE
-nan,42802,DE
-nan,34002,DE
-nan,45202,DE
-nan,16602,DE
-nan,59902,DE
-nan,24402,DC
-nan,99992,DC
-nan,45202,DC
-nan,42802,DC
-nan,16402,DC
 "Jacksonville, FL",99992,FL
 "Tallahassee, FL",99992,FL
-nan,99992,FL
-nan,42802,FL
-nan,38802,KS
-nan,99992,KS
-nan,07602,KS
 "Wichita-Winfield, KS",99992,KS
 "Topeka, KS",99992,KS
-nan,76802,KS
-nan,39602,KS
-nan,55602,KS
-nan,33502,KS
-nan,52002,KS
-nan,02202,KS
-nan,99992,KY
-nan,55602,KY
 "Owensboro, KY",99992,KY
-nan,33502,KY
 "Paducah-Mayfield, KY-IL",99992,KY
 "Louisville-Elizabethtown-Scottsburg, KY-IN",99992,KY
-nan,76802,KY
-nan,07602,KY
 "Lexington-Fayette--Frankfort--Richmond, KY",99992,KY
-nan,42402,MT
-nan,99992,MT
-nan,64002,MT
-nan,07302,MT
-nan,64502,MT
-nan,19002,OK
 "Tulsa-Bartlesville, OK",07202,OK
-nan,07202,OK
-nan,88402,OK
 "Stillwater, OK",99992,OK
 "Fort Smith, AR-OK",07202,OK
-nan,91602,OK
-nan,99992,OK
-nan,31802,OK
-nan,07202,SC
-nan,99992,VT
-nan,07402,VT
-nan,63202,VT
-nan,12002,VT
-nan,11202,VT
-nan,54002,VT
-nan,64802,VT
-nan,41602,VT
-nan,80002,VT
-nan,92402,VT
-nan,26002,VT
-nan,45602,VT
-nan,99992,AS
-nan,30002,AS
-nan,69602,AS
-nan,08702,AS
-nan,37202,AS
-nan,40402,AS
-nan,26402,AS
-nan,35202,AS
-nan,21602,AS
-nan,04402,AS
-nan,69602,
-nan,21602,
-nan,30002,
-nan,37202,
-nan,04402,
-nan,51202,
-nan,69802,
-nan,25202,
-nan,38702,
-nan,68202,
-nan,29852,
-nan,22402,
-nan,49202,
-nan,32852,
-nan,09202,
-nan,35602,
-nan,70002,
-nan,17402,
-nan,79202,
-nan,70402,
-nan,37102,
-nan,99993,
-nan,30403,
-nan,51403,
-nan,99993,AL
 "Montgomery-Alexander City, AL",99993,AL
 "Huntsville-Decatur, AL",99993,AL
-nan,08803,AL
-nan,99993,DE
-nan,59203,DE
-nan,77203,DE
-nan,99993,DC
-nan,43603,DC
-nan,59203,DC
-nan,99993,KS
-nan,41203,KS
 "Wichita-Winfield, KS",99993,KS
 "Parsons, KS",99993,KS
 "Topeka, KS",99993,KS
-nan,67203,KS
-nan,99993,MA
-nan,99993,MT
-nan,47603,MT
-nan,53503,MT
-nan,45603,MT
-nan,41603,MT
-nan,64503,MT
-nan,11203,MT
-nan,05603,OK
-nan,08753,OK
-nan,61603,OK
-nan,87603,OK
-nan,56403,OK
-nan,36403,OK
-nan,50153,OK
-nan,84803,OK
-nan,51903,OK
-nan,02003,VT
-nan,99993,VT
-nan,41003,VT
-nan,74903,VT
-nan,01603,AS
-nan,99993,AS
-nan,56003,AS
-nan,09603,AS
-nan,81603,AS
-nan,36103,AS
-nan,23353,AS
-nan,22813,AS
-nan,12803,AS
-nan,68403,AS
-nan,86803,AS
-nan,53803,AS
-nan,56603,AS
-nan,53803,
-nan,09603,
-nan,29753,
-nan,68403,
-nan,56003,
-nan,31203,
-nan,32903,
-nan,92003,
-nan,04803,
-nan,15203,
-nan,66403,
-nan,25603,
-nan,57203,
-nan,68953,
-nan,36053,
-nan,31503,
-nan,29803,
-nan,10103,
-nan,25203,
-nan,29853,
-nan,43203,
-nan,16803,
-nan,90003,
-nan,16403,
-nan,32003,
-nan,13203,
-nan,20003,
-nan,93203,
-nan,48003,
-nan,18403,
-nan,84003,
-nan,80803,
-nan,34003,
-nan,00803,
-nan,60203,
-nan,99994,
-nan,58804,
-nan,42004,
-nan,85604,
-nan,23404,
-nan,99994,AL
 "Huntsville-Decatur, AL",99994,AL
-nan,58804,AL
-nan,85604,AL
-nan,27204,AL
-nan,99994,DE
-nan,18904,DE
-nan,64404,DE
-nan,48904,DE
-nan,24004,DE
-nan,70804,DE
-nan,99994,KS
-nan,62804,KS
 "Wichita-Winfield, KS",62804,KS
 "Kansas City-Overland Park-Kansas City, MO-KS",99994,KS
 "Parsons, KS",99994,KS
-nan,66804,KS
-nan,02804,KS
-nan,61604,KS
-nan,36804,KS
-nan,02404,KS
-nan,80504,KS
-nan,75604,KS
-nan,32404,KS
-nan,23604,KS
-nan,40004,KS
-nan,91404,KS
-nan,76104,KS
-nan,61604,KY
-nan,56604,KY
 "Owensboro, KY",99994,KY
-nan,99994,KY
-nan,36804,KY
 "Paducah-Mayfield, KY-IL",99994,KY
 "Louisville-Elizabethtown-Scottsburg, KY-IN",99994,KY
 "Somerset, KY",99994,KY
 "Lexington-Fayette--Frankfort--Richmond, KY",99994,KY
-nan,62804,KY
-nan,75604,KY
-nan,92804,KY
-nan,64804,OK
-nan,99994,OK
-nan,55204,OK
-nan,99994,VT
-nan,06004,VT
-nan,31604,VT
-nan,14404,VT
-nan,26554,VT
-nan,53304,VT
-nan,17604,VT
-nan,81404,VT
-nan,15204,VT
-nan,99994,AS
-nan,77604,AS
-nan,66604,
-nan,38404,
-nan,36604,
-nan,53604,
-nan,35804,
-nan,49204,
-nan,15604,
-nan,16604,
-nan,90804,
-nan,06404,
-nan,38104,
-nan,72404,
-nan,83604,
-nan,11454,
-nan,12604,
-nan,12404,
-nan,33604,
-nan,19204,
-nan,58004,
-nan,23204,
-nan,29204,
-nan,76404,
-nan,44204,
-nan,08404,
-nan,48804,
-nan,28004,
-nan,46004,
-nan,88004,
-nan,18804,
-nan,03204,
-nan,86404,
-nan,00404,
-nan,72004,
-nan,87504,
-nan,40804,
-nan,71604,
-nan,26204,
-nan,65204,
-nan,99995,
-nan,13055,
-nan,99995,DE
-nan,15405,DE
-nan,46405,DE
-nan,88405,DE
-nan,68005,DE
-nan,67605,DE
-nan,57205,DE
-nan,99995,DC
-nan,88405,DC
-nan,57205,DC
-nan,67605,DC
-nan,19505,DC
-nan,68005,DC
-nan,36605,DC
-nan,88405,HI
-nan,46405,HI
-nan,36605,HI
-nan,99995,HI
-nan,15405,HI
-nan,57205,HI
-nan,67605,HI
-nan,19505,HI
-nan,88405,ID
-nan,99995,ID
-nan,57205,ID
-nan,67605,ID
-nan,46405,ID
-nan,57205,IL
-nan,99995,IL
-nan,67605,IL
-nan,68005,IL
-nan,57205,IN
-nan,99995,IN
-nan,99995,MT
-nan,67405,MT
-nan,64405,MT
-nan,76005,MT
-nan,11505,MT
-nan,82005,MT
-nan,78405,MT
-nan,59105,MT
-nan,08605,MT
-nan,92605,MT
 "Ardmore, OK",99995,OK
-nan,88405,OK
-nan,99995,OK
 "Fort Smith, AR-OK",99995,OK
-nan,80805,OK
-nan,34005,OK
 "Guymon, OK",99995,OK
-nan,14805,OK
-nan,90005,OK
-nan,19005,OK
 "Roseburg, OR",99995,OR
-nan,99995,OR
 "Eugene-Springfield, OR",99995,OR
 "Pendleton-Hermiston, OR",99995,OR
-nan,60205,OR
-nan,99995,VT
-nan,30805,VT
-nan,04605,VT
-nan,22905,VT
-nan,47205,VT
-nan,22405,VT
-nan,38005,VT
-nan,38705,VT
-nan,89405,VT
-nan,50805,VT
-nan,51205,VT
-nan,66005,VA
-nan,99995,VA
-nan,36205,VA
 "Charlottesville, VA",99995,VA
-nan,51205,VA
-nan,76205,VA
 "Virginia Beach-Norfolk-Newport News, VA-NC",99995,VA
-nan,50805,VA
-nan,04605,VA
-nan,99995,AS
-nan,15805,AS
-nan,13505,AS
-nan,99996,
-nan,99996,AS
-nan,99997,KS
-nan,00607,KS
-nan,74407,KS
 "Wichita-Winfield, KS",74407,KS
 "Parsons, KS",99997,KS
-nan,48407,KS
-nan,04707,KS
 "Liberal, KS",74407,KS
-nan,13107,KS
-nan,63607,KS
 "Huntington-Ashland, WV-KY-OH",74407,KY
-nan,74407,KY
 "Owensboro, KY",74407,KY
-nan,99997,KY
 "Cincinnati-Middletown-Wilmington, OH-KY-IN",63607,KY
-nan,63607,KY
 "Louisville-Elizabethtown-Scottsburg, KY-IN",99997,KY
 "Cincinnati-Middletown-Wilmington, OH-KY-IN",74407,KY
-nan,48407,KY
 "Lexington-Fayette--Frankfort--Richmond, KY",99997,KY
-nan,13107,KY
-nan,99997,

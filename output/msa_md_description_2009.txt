@@ -27,20 +27,20 @@ Memphis, TN-MS-AR|32820|AR
 Little Rock-North Little Rock-Pine Bluff, AR|30780|AR
 Hot Springs, AR|26300|AR
 Texarkana, TX-Texarkana, AR|45500|AR
-Oakland-Fremont-Hayward, CA|36084|CA
+San Jose-San Francisco-Oakland, CA|36084|CA
 Chico, CA|17020|CA
 Sacramento--Arden-Arcade--Yuba City, CA-NV|40900|CA
 Fresno-Madera, CA|23420|CA
 El Centro, CA|20940|CA
 Bakersfield-Delano, CA|12540|CA
 Hanford-Corcoran, CA|25260|CA
-Los Angeles-Long Beach-Glendale, CA|31084|CA
+Los Angeles-Long Beach-Riverside, CA|31084|CA
 Fresno-Madera, CA|31460|CA
-San Francisco-San Mateo-Redwood City, CA|41884|CA
+San Jose-San Francisco-Oakland, CA|41884|CA
 Merced, CA|32900|CA
 Salinas, CA|41500|CA
 San Jose-San Francisco-Oakland, CA|34900|CA
-Santa Ana-Anaheim-Irvine, CA|42044|CA
+Los Angeles-Long Beach-Riverside, CA|42044|CA
 Los Angeles-Long Beach-Riverside, CA|40140|CA
 San Jose-San Francisco-Oakland, CA|41940|CA
 San Diego-Carlsbad-San Marcos, CA|41740|CA
@@ -67,13 +67,13 @@ Hartford-West Hartford-Willimantic, CT|25540|CT
 New York-Newark-Bridgeport, NY-NJ-CT-PA|35300|CT
 Norwich-New London, CT|35980|CT
 Dover, DE|20100|DE
-Wilmington, DE-MD-NJ|48864|DE
-Washington-Arlington-Alexandria, DC-VA-MD-WV|47894|DC
+Philadelphia-Camden-Vineland, PA-NJ-DE-MD|48864|DE
+Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|47894|DC
 Gainesville, FL|23540|FL
 Jacksonville, FL|27260|FL
 Panama City-Lynn Haven-Panama City Beach, FL|37460|FL
 Palm Bay-Melbourne-Titusville, FL|37340|FL
-Fort Lauderdale-Pompano Beach-Deerfield Beach, FL|22744|FL
+Miami-Fort Lauderdale-Pompano Beach, FL|22744|FL
 Sarasota-Bradenton-Punta Gorda, FL|39460|FL
 Naples-Marco Island, FL|34940|FL
 Pensacola-Ferry Pass-Brent, FL|37860|FL
@@ -86,9 +86,9 @@ Cape Coral-Fort Myers, FL|15980|FL
 Sarasota-Bradenton-Punta Gorda, FL|14600|FL
 Ocala, FL|36100|FL
 Port St. Lucie-Sebastian-Vero Beach, FL|38940|FL
-Miami-Miami Beach-Kendall, FL|33124|FL
+Miami-Fort Lauderdale-Pompano Beach, FL|33124|FL
 Crestview-Fort Walton Beach-Destin, FL|23020|FL
-West Palm Beach-Boca Raton-Boynton Beach, FL|48424|FL
+Miami-Fort Lauderdale-Pompano Beach, FL|48424|FL
 Lakeland-Winter Haven, FL|29460|FL
 Orlando-Deltona-Daytona Beach, FL|19660|FL
 Albany, GA|10500|GA
@@ -117,10 +117,10 @@ Cape Girardeau-Sikeston-Jackson, MO-IL|16020|IL
 St. Louis-St. Charles-Farmington, MO-IL|41180|IL
 Rockford-Freeport-Rochelle, IL|40420|IL
 Champaign-Urbana, IL|16580|IL
-Chicago-Joliet-Naperville, IL|16974|IL
+Chicago-Naperville-Michigan City, IL-IN-WI|16974|IL
 Davenport-Moline-Rock Island, IA-IL|19340|IL
 Chicago-Naperville-Michigan City, IL-IN-WI|28100|IL
-Lake County-Kenosha County, IL-WI|29404|IL
+Chicago-Naperville-Michigan City, IL-IN-WI|29404|IL
 Bloomington-Normal, IL|14060|IL
 Decatur, IL|19500|IL
 Peoria-Canton, IL|37900|IL
@@ -138,7 +138,7 @@ South Bend-Elkhart-Mishawaka, IN-MI|21140|IN
 Evansville, IN-KY|21780|IN
 Bloomington, IN|14020|IN
 Kokomo-Peru, IN|29020|IN
-Gary, IN|23844|IN
+Chicago-Naperville-Michigan City, IL-IN-WI|23844|IN
 Chicago-Naperville-Michigan City, IL-IN-WI|33140|IN
 Indianapolis-Anderson-Columbus, IN|11300|IN
 South Bend-Elkhart-Mishawaka, IN-MI|43780|IN
@@ -179,18 +179,18 @@ Portland-Lewiston-South Portland, ME|38860|ME
 Bangor, ME|12620|ME
 Cumberland, MD-WV|19060|MD
 Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|12580|MD
-Washington-Arlington-Alexandria, DC-VA-MD-WV|47894|MD
-Wilmington, DE-MD-NJ|48864|MD
-Bethesda-Rockville-Frederick, MD|13644|MD
+Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|47894|MD
+Philadelphia-Camden-Vineland, PA-NJ-DE-MD|48864|MD
+Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|13644|MD
 Salisbury-Ocean Pines, MD|41540|MD
 Hagerstown-Martinsburg, MD-WV|25180|MD
 Barnstable Town, MA|12700|MA
 Pittsfield, MA|38340|MA
 Boston-Worcester-Manchester, MA-RI-NH|39300|MA
-Peabody, MA|37764|MA
+Boston-Worcester-Manchester, MA-RI-NH|37764|MA
 Springfield, MA|44140|MA
-Cambridge-Newton-Framingham, MA|15764|MA
-Boston-Quincy, MA|14484|MA
+Boston-Worcester-Manchester, MA-RI-NH|15764|MA
+Boston-Worcester-Manchester, MA-RI-NH|14484|MA
 Boston-Worcester-Manchester, MA-RI-NH|49340|MA
 Grand Rapids-Muskegon-Holland, MI|24340|MI
 Saginaw-Bay City-Saginaw Township North, MI|13020|MI
@@ -201,13 +201,13 @@ Lansing-East Lansing-Owosso, MI|29620|MI
 Detroit-Warren-Flint, MI|22420|MI
 Jackson, MI|27100|MI
 Kalamazoo-Portage, MI|28020|MI
-Warren-Troy-Farmington Hills, MI|47644|MI
+Detroit-Warren-Flint, MI|47644|MI
 Detroit-Warren-Flint, MI|33780|MI
 Grand Rapids-Muskegon-Holland, MI|34740|MI
 Grand Rapids-Muskegon-Holland, MI|26100|MI
 Saginaw-Bay City-Saginaw Township North, MI|40980|MI
 Detroit-Warren-Flint, MI|11460|MI
-Detroit-Livonia-Dearborn, MI|19804|MI
+Detroit-Warren-Flint, MI|19804|MI
 Minneapolis-St. Paul-St. Cloud, MN-WI|33460|MN
 Minneapolis-St. Paul-St. Cloud, MN-WI|41060|MN
 Mankato-North Mankato, MN|31860|MN
@@ -240,23 +240,23 @@ Las Vegas-Paradise-Pahrump, NV|29820|NV
 Reno-Sparks-Fernley, NV|39900|NV
 Carson City, NV|16180|NV
 Boston-Worcester-Manchester, MA-RI-NH|31700|NH
-Rockingham County-Strafford County, NH|40484|NH
+Boston-Worcester-Manchester, MA-RI-NH|40484|NH
 Atlantic City-Hammonton, NJ|12100|NJ
-New York-White Plains-Wayne, NY-NJ|35644|NJ
-Camden, NJ|15804|NJ
+New York-Newark-Bridgeport, NY-NJ-CT-PA|35644|NJ
+Philadelphia-Camden-Vineland, PA-NJ-DE-MD|15804|NJ
 Ocean City, NJ|36140|NJ
 Philadelphia-Camden-Vineland, PA-NJ-DE-MD|47220|NJ
-Newark-Union, NJ-PA|35084|NJ
+New York-Newark-Bridgeport, NY-NJ-CT-PA|35084|NJ
 New York-Newark-Bridgeport, NY-NJ-CT-PA|45940|NJ
-Edison-New Brunswick, NJ|20764|NJ
-Wilmington, DE-MD-NJ|48864|NJ
+New York-Newark-Bridgeport, NY-NJ-CT-PA|20764|NJ
+Philadelphia-Camden-Vineland, PA-NJ-DE-MD|48864|NJ
 Allentown-Bethlehem-Easton, PA-NJ|10900|NJ
 Albuquerque, NM|10740|NM
 Las Cruces, NM|29740|NM
 Farmington, NM|22140|NM
 Santa Fe-Espanola, NM|42140|NM
 Albany-Schenectady-Amsterdam, NY|10580|NY
-New York-White Plains-Wayne, NY-NJ|35644|NY
+New York-Newark-Bridgeport, NY-NJ-CT-PA|35644|NY
 Binghamton, NY|13780|NY
 Elmira, NY|21300|NY
 New York-Newark-Bridgeport, NY-NJ-CT-PA|39100|NY
@@ -264,7 +264,7 @@ Buffalo-Niagara-Cattaraugus, NY|15380|NY
 Utica-Rome, NY|46540|NY
 Rochester-Batavia-Seneca Falls, NY|40380|NY
 Syracuse-Auburn, NY|45060|NY
-Nassau-Suffolk, NY|35004|NY
+New York-Newark-Bridgeport, NY-NJ-CT-PA|35004|NY
 Ithaca-Cortland, NY|27060|NY
 New York-Newark-Bridgeport, NY-NJ-CT-PA|28740|NY
 Albany-Schenectady-Amsterdam, NY|24020|NY
@@ -315,7 +315,7 @@ Salem, OR|41420|OR
 Pittsburgh-New Castle, PA|38300|PA
 Philadelphia-Camden-Vineland, PA-NJ-DE-MD|39740|PA
 Altoona, PA|11020|PA
-Philadelphia, PA|37964|PA
+Philadelphia-Camden-Vineland, PA-NJ-DE-MD|37964|PA
 Johnstown, PA|27780|PA
 Allentown-Bethlehem-Easton, PA-NJ|10900|PA
 State College, PA|44300|PA
@@ -326,7 +326,7 @@ Lancaster, PA|29540|PA
 Harrisburg-Carlisle-Lebanon, PA|30140|PA
 Williamsport-Lock Haven, PA|48700|PA
 Youngstown-Warren-East Liverpool, OH-PA|49660|PA
-Newark-Union, NJ-PA|35084|PA
+New York-Newark-Bridgeport, NY-NJ-CT-PA|35084|PA
 York-Hanover-Gettysburg, PA|49620|PA
 Boston-Worcester-Manchester, MA-RI-NH|39300|RI
 Augusta-Richmond County, GA-SC|12260|SC
@@ -364,7 +364,7 @@ College Station-Bryan, TX|17780|TX
 Victoria, TX|47020|TX
 Abilene, TX|10180|TX
 Brownsville-Harlingen-Raymondville, TX|15180|TX
-Dallas-Plano-Irving, TX|19124|TX
+Dallas-Fort Worth, TX|19124|TX
 Lubbock-Levelland, TX|31180|TX
 Midland-Odessa, TX|36220|TX
 El Paso, TX|21340|TX
@@ -373,7 +373,7 @@ Longview-Marshall, TX|30980|TX
 Beaumont-Port Arthur, TX|13140|TX
 McAllen-Edinburg-Mission, TX|32580|TX
 San Angelo, TX|41660|TX
-Fort Worth-Arlington, TX|23104|TX
+Dallas-Fort Worth, TX|23104|TX
 Waco, TX|47380|TX
 Midland-Odessa, TX|33260|TX
 Tyler-Jacksonville, TX|46340|TX
@@ -387,7 +387,7 @@ Burlington-South Burlington, VT|15540|VT
 Charlottesville, VA|16820|VA
 Richmond, VA|40060|VA
 Lynchburg, VA|31340|VA
-Washington-Arlington-Alexandria, DC-VA-MD-WV|47894|VA
+Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|47894|VA
 Roanoke, VA|40220|VA
 Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|49020|VA
 Blacksburg-Christiansburg-Radford, VA|13980|VA
@@ -400,9 +400,9 @@ Kennewick-Pasco-Richland, WA|28420|WA
 Wenatchee-East Wenatchee, WA|48300|WA
 Portland-Vancouver-Hillsboro, OR-WA|38900|WA
 Longview, WA|31020|WA
-Seattle-Bellevue-Everett, WA|42644|WA
+Seattle-Tacoma-Olympia, WA|42644|WA
 Seattle-Tacoma-Olympia, WA|14740|WA
-Tacoma, WA|45104|WA
+Seattle-Tacoma-Olympia, WA|45104|WA
 Seattle-Tacoma-Olympia, WA|34580|WA
 Spokane, WA|44060|WA
 Seattle-Tacoma-Olympia, WA|36500|WA
@@ -413,7 +413,7 @@ Charleston, WV|16620|WV
 Steubenville-Weirton, OH-WV|48260|WV
 Huntington-Ashland, WV-KY-OH|26580|WV
 Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|49020|WV
-Washington-Arlington-Alexandria, DC-VA-MD-WV|47894|WV
+Washington-Baltimore-Northern Virginia, DC-MD-VA-WV|47894|WV
 Wheeling, WV-OH|48540|WV
 Cumberland, MD-WV|19060|WV
 Morgantown, WV|34060|WV
@@ -424,7 +424,7 @@ Eau Claire-Menomonie, WI|20740|WI
 Madison-Baraboo, WI|31540|WI
 Duluth, MN-WI|20260|WI
 Fond du Lac-Beaver Dam, WI|22540|WI
-Lake County-Kenosha County, IL-WI|29404|WI
+Chicago-Naperville-Michigan City, IL-IN-WI|29404|WI
 La Crosse, WI-MN|29100|WI
 Wausau-Merrill, WI|48140|WI
 Milwaukee-Racine-Waukesha, WI|33340|WI

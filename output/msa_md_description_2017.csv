@@ -29,24 +29,24 @@ msa_md,msa_md_name,state
 "Little Rock-North Little Rock, AR",30780,AR
 "Hot Springs-Malvern, AR",26300,AR
 "Texarkana, TX-AR",45500,AR
-"Oakland-Hayward-Berkeley, CA",36084,CA
+"San Jose-San Francisco-Oakland, CA",36084,CA
 "Chico, CA",17020,CA
 "Sacramento-Roseville, CA",40900,CA
 "Fresno-Madera, CA",23420,CA
 "El Centro, CA",20940,CA
 "Bakersfield, CA",12540,CA
 "Visalia-Porterville-Hanford, CA",25260,CA
-"Los Angeles-Long Beach-Glendale, CA",31084,CA
+"Los Angeles-Long Beach, CA",31084,CA
 "Fresno-Madera, CA",31460,CA
-"San Rafael, CA",42034,CA
+"San Jose-San Francisco-Oakland, CA",42034,CA
 "Modesto-Merced, CA",32900,CA
 "Salinas, CA",41500,CA
 "San Jose-San Francisco-Oakland, CA",34900,CA
-"Anaheim-Santa Ana-Irvine, CA",11244,CA
+"Los Angeles-Long Beach, CA",11244,CA
 "Los Angeles-Long Beach, CA",40140,CA
 "San Jose-San Francisco-Oakland, CA",41940,CA
 "San Diego-Carlsbad, CA",41740,CA
-"San Francisco-Redwood City-South San Francisco, CA",41884,CA
+"San Jose-San Francisco-Oakland, CA",41884,CA
 "San Jose-San Francisco-Oakland, CA",44700,CA
 "San Luis Obispo-Paso Robles-Arroyo Grande, CA",42020,CA
 "Santa Maria-Santa Barbara, CA",42200,CA
@@ -71,14 +71,14 @@ msa_md,msa_md_name,state
 "Hartford-West Hartford, CT",35980,CT
 "Boston-Worcester-Providence, MA-RI-NH-CT",49340,CT
 "Philadelphia-Reading-Camden, PA-NJ-DE-MD",20100,DE
-"Wilmington, DE-MD-NJ",48864,DE
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",48864,DE
 "Salisbury, MD-DE",41540,DE
-"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,DC
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",47894,DC
 "Gainesville-Lake City, FL",23540,FL
 "Jacksonville-St. Marys-Palatka, FL-GA",27260,FL
 "Panama City, FL",37460,FL
 "Palm Bay-Melbourne-Titusville, FL",37340,FL
-"Fort Lauderdale-Pompano Beach-Deerfield Beach, FL",22744,FL
+"Miami-Fort Lauderdale-Port St. Lucie, FL",22744,FL
 "North Port-Sarasota, FL",39460,FL
 "Homosassa Springs, FL",26140,FL
 "Cape Coral-Fort Myers-Naples, FL",34940,FL
@@ -93,9 +93,9 @@ msa_md,msa_md_name,state
 "North Port-Sarasota, FL",35840,FL
 "Ocala, FL",36100,FL
 "Miami-Fort Lauderdale-Port St. Lucie, FL",38940,FL
-"Miami-Miami Beach-Kendall, FL",33124,FL
+"Miami-Fort Lauderdale-Port St. Lucie, FL",33124,FL
 "Crestview-Fort Walton Beach-Destin, FL",18880,FL
-"West Palm Beach-Boca Raton-Delray Beach, FL",48424,FL
+"Miami-Fort Lauderdale-Port St. Lucie, FL",48424,FL
 "Lakeland-Winter Haven, FL",29460,FL
 "Orlando-Deltona-Daytona Beach, FL",45540,FL
 "Albany, GA",10500,GA
@@ -125,13 +125,13 @@ msa_md,msa_md_name,state
 "St. Louis-St. Charles-Farmington, MO-IL",41180,IL
 "Rockford-Freeport-Rochelle, IL",40420,IL
 "Champaign-Urbana, IL",16580,IL
-"Chicago-Naperville-Arlington Heights, IL",16974,IL
-"Elgin, IL",20994,IL
+"Chicago-Naperville, IL-IN-WI",16974,IL
+"Chicago-Naperville, IL-IN-WI",20994,IL
 "Bloomington-Pontiac, IL",14010,IL
 "Davenport-Moline, IA-IL",19340,IL
 "Carbondale-Marion, IL",16060,IL
 "Chicago-Naperville, IL-IN-WI",28100,IL
-"Lake County-Kenosha County, IL-WI",29404,IL
+"Chicago-Naperville, IL-IN-WI",29404,IL
 "Decatur, IL",19500,IL
 "Peoria-Canton, IL",37900,IL
 "Springfield-Jacksonville-Lincoln, IL",44100,IL
@@ -146,7 +146,7 @@ msa_md,msa_md_name,state
 "Indianapolis-Carmel-Muncie, IN",34620,IN
 "South Bend-Elkhart-Mishawaka, IN-MI",21140,IN
 "Kokomo-Peru, IN",29020,IN
-"Gary, IN",23844,IN
+"Chicago-Naperville, IL-IN-WI",23844,IN
 "Chicago-Naperville, IL-IN-WI",33140,IN
 "Bloomington-Bedford, IN",14020,IN
 "Evansville, IN-KY",21780,IN
@@ -189,18 +189,18 @@ msa_md,msa_md_name,state
 "Bangor, ME",12620,ME
 "Cumberland, MD-WV",19060,MD
 "Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",12580,MD
-"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,MD
-"Wilmington, DE-MD-NJ",48864,MD
-"Silver Spring-Frederick-Rockville, MD",43524,MD
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",47894,MD
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",48864,MD
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",43524,MD
 "Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",15680,MD
 "Salisbury, MD-DE",41540,MD
 "Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",25180,MD
 "Boston-Worcester-Providence, MA-RI-NH-CT",12700,MA
 "Pittsfield, MA",38340,MA
 "Boston-Worcester-Providence, MA-RI-NH-CT",39300,MA
-"Cambridge-Newton-Framingham, MA",15764,MA
+"Boston-Worcester-Providence, MA-RI-NH-CT",15764,MA
 "Springfield-Greenfield Town, MA",44140,MA
-"Boston, MA",14454,MA
+"Boston-Worcester-Providence, MA-RI-NH-CT",14454,MA
 "Boston-Worcester-Providence, MA-RI-NH-CT",49340,MA
 "Grand Rapids-Wyoming-Muskegon, MI",24340,MI
 "Saginaw-Midland-Bay City, MI",13020,MI
@@ -211,13 +211,13 @@ msa_md,msa_md_name,state
 "Detroit-Warren-Ann Arbor, MI",22420,MI
 "Jackson, MI",27100,MI
 "Kalamazoo-Battle Creek-Portage, MI",28020,MI
-"Warren-Troy-Farmington Hills, MI",47664,MI
+"Detroit-Warren-Ann Arbor, MI",47664,MI
 "Saginaw-Midland-Bay City, MI",33220,MI
 "Detroit-Warren-Ann Arbor, MI",33780,MI
 "Grand Rapids-Wyoming-Muskegon, MI",34740,MI
 "Saginaw-Midland-Bay City, MI",40980,MI
 "Detroit-Warren-Ann Arbor, MI",11460,MI
-"Detroit-Dearborn-Livonia, MI",19804,MI
+"Detroit-Warren-Ann Arbor, MI",19804,MI
 "Minneapolis-St. Paul, MN-WI",33460,MN
 "Minneapolis-St. Paul, MN-WI",41060,MN
 "Mankato-New Ulm-North Mankato, MN",31860,MN
@@ -250,31 +250,31 @@ msa_md,msa_md_name,state
 "Reno-Carson City-Fernley, NV",39900,NV
 "Reno-Carson City-Fernley, NV",16180,NV
 "Boston-Worcester-Providence, MA-RI-NH-CT",31700,NH
-"Rockingham County-Strafford County, NH",40484,NH
+"Boston-Worcester-Providence, MA-RI-NH-CT",40484,NH
 "Philadelphia-Reading-Camden, PA-NJ-DE-MD",12100,NJ
-"New York-Jersey City-White Plains, NY-NJ",35614,NJ
-"Camden, NJ",15804,NJ
+"New York-Newark, NY-NJ-CT-PA",35614,NJ
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",15804,NJ
 "Philadelphia-Reading-Camden, PA-NJ-DE-MD",36140,NJ
 "Philadelphia-Reading-Camden, PA-NJ-DE-MD",47220,NJ
-"Newark, NJ-PA",35084,NJ
+"New York-Newark, NY-NJ-CT-PA",35084,NJ
 "New York-Newark, NY-NJ-CT-PA",45940,NJ
-"Wilmington, DE-MD-NJ",48864,NJ
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",48864,NJ
 "New York-Newark, NY-NJ-CT-PA",10900,NJ
 "Albuquerque-Santa Fe-Las Vegas, NM",10740,NM
 "El Paso-Las Cruces, TX-NM",29740,NM
 "Farmington, NM",22140,NM
 "Albuquerque-Santa Fe-Las Vegas, NM",42140,NM
 "Albany-Schenectady, NY",10580,NY
-"New York-Jersey City-White Plains, NY-NJ",35614,NY
+"New York-Newark, NY-NJ-CT-PA",35614,NY
 "Binghamton, NY",13780,NY
 "Elmira-Corning, NY",21300,NY
-"Dutchess County-Putnam County, NY",20524,NY
+"New York-Newark, NY-NJ-CT-PA",20524,NY
 "Buffalo-Cheektowaga, NY",15380,NY
 "Utica-Rome, NY",46540,NY
 "Watertown-Fort Drum, NY",48060,NY
 "Rochester-Batavia-Seneca Falls, NY",40380,NY
 "Syracuse-Auburn, NY",45060,NY
-"Nassau County-Suffolk County, NY",35004,NY
+"New York-Newark, NY-NJ-CT-PA",35004,NY
 "Ithaca-Cortland, NY",27060,NY
 "New York-Newark, NY-NJ-CT-PA",28740,NY
 "Albany-Schenectady, NY",24020,NY
@@ -329,13 +329,13 @@ msa_md,msa_md_name,state
 "Pittsburgh-New Castle-Weirton, PA-OH-WV",38300,PA
 "Philadelphia-Reading-Camden, PA-NJ-DE-MD",39740,PA
 "Altoona, PA",11020,PA
-"Montgomery County-Bucks County-Chester County, PA",33874,PA
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",33874,PA
 "Johnstown-Somerset, PA",27780,PA
 "New York-Newark, NY-NJ-CT-PA",10900,PA
 "State College-DuBois, PA",44300,PA
 "Bloomsburg-Berwick-Sunbury, PA",14100,PA
 "Harrisburg-York-Lebanon, PA",25420,PA
-"Philadelphia, PA",37964,PA
+"Philadelphia-Reading-Camden, PA-NJ-DE-MD",37964,PA
 "Erie-Meadville, PA",21500,PA
 "Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",16540,PA
 "Scranton--Wilkes-Barre--Hazleton, PA",42540,PA
@@ -344,7 +344,7 @@ msa_md,msa_md_name,state
 "Williamsport-Lock Haven, PA",48700,PA
 "Youngstown-Warren, OH-PA",49660,PA
 "New York-Newark, NY-NJ-CT-PA",20700,PA
-"Newark, NJ-PA",35084,PA
+"New York-Newark, NY-NJ-CT-PA",35084,PA
 "Harrisburg-York-Lebanon, PA",49620,PA
 "Boston-Worcester-Providence, MA-RI-NH-CT",39300,RI
 "Augusta-Richmond County, GA-SC",12260,SC
@@ -381,7 +381,7 @@ msa_md,msa_md_name,state
 "College Station-Bryan, TX",17780,TX
 "Abilene, TX",10180,TX
 "Brownsville-Harlingen-Raymondville, TX",15180,TX
-"Dallas-Plano-Irving, TX",19124,TX
+"Dallas-Fort Worth, TX-OK",19124,TX
 "Lubbock-Levelland, TX",31180,TX
 "Midland-Odessa, TX",36220,TX
 "El Paso-Las Cruces, TX-NM",21340,TX
@@ -391,7 +391,7 @@ msa_md,msa_md_name,state
 "Longview-Marshall, TX",30980,TX
 "Beaumont-Port Arthur, TX",13140,TX
 "McAllen-Edinburg, TX",32580,TX
-"Fort Worth-Arlington, TX",23104,TX
+"Dallas-Fort Worth, TX-OK",23104,TX
 "San Angelo, TX",41660,TX
 "Midland-Odessa, TX",33260,TX
 "Tyler-Jacksonville, TX",46340,TX
@@ -405,7 +405,7 @@ msa_md,msa_md_name,state
 "Charlottesville, VA",16820,VA
 "Richmond, VA",40060,VA
 "Lynchburg, VA",31340,VA
-"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,VA
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",47894,VA
 "Harrisonburg-Staunton-Waynesboro, VA",44420,VA
 "Roanoke, VA",40220,VA
 "Blacksburg-Christiansburg-Radford, VA",13980,VA
@@ -419,10 +419,10 @@ msa_md,msa_md_name,state
 "Portland-Vancouver-Salem, OR-WA",38900,WA
 "Walla Walla, WA",47460,WA
 "Portland-Vancouver-Salem, OR-WA",31020,WA
-"Seattle-Bellevue-Everett, WA",42644,WA
+"Seattle-Tacoma, WA",42644,WA
 "Seattle-Tacoma, WA",14740,WA
 "Spokane-Spokane Valley-Coeur d'Alene, WA-ID",44060,WA
-"Tacoma-Lakewood, WA",45104,WA
+"Seattle-Tacoma, WA",45104,WA
 "Seattle-Tacoma, WA",34580,WA
 "Seattle-Tacoma, WA",36500,WA
 "Bellingham, WA",13380,WA
@@ -433,7 +433,7 @@ msa_md,msa_md_name,state
 "Charleston-Huntington-Ashland, WV-OH-KY",26580,WV
 "Beckley, WV",13220,WV
 "Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",49020,WV
-"Washington-Arlington-Alexandria, DC-VA-MD-WV",47894,WV
+"Washington-Baltimore-Arlington, DC-MD-VA-WV-PA",47894,WV
 "Wheeling, WV-OH",48540,WV
 "Cumberland, MD-WV",19060,WV
 "Morgantown-Fairmont, WV",34060,WV
@@ -444,7 +444,7 @@ msa_md,msa_md_name,state
 "Madison-Janesville-Beloit, WI",31540,WI
 "Duluth, MN-WI",20260,WI
 "Fond du Lac, WI",22540,WI
-"Lake County-Kenosha County, IL-WI",29404,WI
+"Chicago-Naperville, IL-IN-WI",29404,WI
 "La Crosse-Onalaska, WI-MN",29100,WI
 "Wausau-Stevens Point-Wisconsin Rapids, WI",48140,WI
 "Milwaukee-Racine-Waukesha, WI",33340,WI

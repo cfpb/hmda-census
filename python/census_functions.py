@@ -406,11 +406,9 @@ class CensusTools(object):
 				#MD name first and CBSA title second in precedence for determining MSA/MD name
 				#CSA references were removed as they are above the MSA level used for HMDA work
 				#Metropolitan Division Title, CBSA Title
-				census_df["MSA/MD Name"] = census_df.apply(lambda x: 
-					x["CBSA Title"] if pd.notnull(x["CBSA Title"]) else "", axis=1)
-				census_df["MSA/MD Name"] = census_df.apply(lambda x: 
-					str(x["Metropolitan Division Title"]) \
-					if (pd.notnull(x["Metropolitan Division Title"]) and str(x["Metropolitan Division Title"]).strip()!="") 
+				census_df["MSA/MD Name"] = census_df.apply(lambda x: x["CBSA Title"] if pd.notnull(x["CBSA Title"]) else "", axis=1)
+				census_df["MSA/MD Name"] = census_df.apply(lambda x: str(x["Metropolitan Division Title"]) \
+					if (pd.notnull(x["Metropolitan Division Title"]) and str(x["Metropolitan Division Title"]).strip() != "") 
 					else x["MSA/MD Name"], axis=1)
 
 
@@ -455,12 +453,14 @@ class CensusTools(object):
 			#load FFIEC Census File Cut
 			ffiec_census_df = pd.read_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.{end}".format(year=year, end=file_ending), 
 										  dtype=object,
-										  sep=sep)
+										  sep=sep,
+										  keep_default_na=False)
 			print(ffiec_census_df.head())
 			#load MSA/MD name file
 			msa_md_name_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.{end}".format(year=year, end=file_ending), 
 										 dtype=object,
-										 sep=sep)
+										 sep=sep,
+										 keep_default_na=False)
 			
 			#Create 5 digit county FIPS in FFIEC file
 			ffiec_census_df["full_county_fips"] = ffiec_census_df.apply(lambda x: str(x.State) + str(x.County), 
@@ -485,13 +485,12 @@ class CensusTools(object):
 								   sep=sep)
 
 			#map FIPS State Code to letter code in column "State" for MSA/MD description file	
-			print(ffiec_census_df.columns)	
-			
 			ffiec_census_df["State"] = ffiec_census_df["State"].map(self.config_data["state_codes_rev"])
 
 			ffiec_census_df["MSA/MD Name"] = ffiec_census_df["MSA/MD Name"].apply(lambda x: str(x).strip())
 			msa_md_desc_df = ffiec_census_df[self.config_data["msa_name_cols"]][(ffiec_census_df["MSA/MD"]!="99999")&
-																				(ffiec_census_df["MSA/MD Name"]!="")].copy()
+																				(ffiec_census_df["MSA/MD Name"]!="")&
+																				(ffiec_census_df["MSA/MD Name"]!="nan")].copy()
 
 			#remove duplicates. These are the records for county and tract that need to be removed from the MSA/MD list
 			msa_md_desc_df.columns = self.config_data["msa_md_desc_out_cols"]
