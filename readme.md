@@ -39,6 +39,7 @@ The HMDA Platform uses data the combines elements of the FFIEC Census Flat File 
 The Office of Management and Budget produces MSA data. Updates can include changes to an MSA's boundaries or creation of new MSAs. These data have no regular publication cycle. HMDA Operations uses the MSA definitions in effect on 12/31 of the year preceding collection, this aligns with other Regulation C criteria. 
 - [OMB Publications on MSA](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)
 - [OMB Delineation Bulletins](https://www.census.gov/programs-surveys/metro-micro/about/omb-bulletins.html)   
+- [OMB Delineation Definition 2010](https://www.govinfo.gov/content/pkg/FR-2010-06-28/pdf/2010-15605.pdf)
 
 The Census delineation files are used to map names to MSA/MD geographies.
 - [Census Publications on MSA](https://www.census.gov/geographies/reference-files/time-series/demo/metro-micro/delineation-files.html)
