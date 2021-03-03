@@ -79,8 +79,8 @@ Census geographic data are used to map MSAs to county and tract areas in the Agg
 - [LAR snapshot publication](https://ffiec.cfpb.gov/data-publication/snapshot-national-loan-level-dataset): contains the entire dataset of loans and applications submitted in accordance with Regulation C.
 
 ## HMDA Platform Census Files
-- [Base resource folder](https://raw.githubusercontent.com/cfpb/hmda-platform/v2.10.5/common/src/main/resources/)
-- [Raw v2 2018 MSA data](https://raw.githubusercontent.com/cfpb/hmda-platform/v2.10.5/common/src/main/resources/census_2018_MSAMD_name.txt)
+- [Base resource folder](https://github.com/cfpb/hmda-platform/tree/master/common/src/main/resources)
+- [Raw v2 2018 MSA data](https://github.com/cfpb/hmda-platform/tree/master/common/src/main/resources/census_2018_MSAMD_name.txt)
 
 
 
