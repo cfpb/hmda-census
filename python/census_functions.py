@@ -311,10 +311,12 @@ class CensusTools(object):
 					census_data.columns = field_names_2002
 
 			if save_csv:
-				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.{end}".format(year=year, end=file_ending), 
+				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.txt".format(year=year), 
 								   index=False,
-								   sep=sep)
-
+								   sep="|")
+				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.csv".format(year=year), 
+								   index=False,
+								   sep=",")
 			return_dict[year] = census_data #add data extract to return dictionary
 
 		if self.config_data["DEBUG"]:
@@ -415,10 +417,12 @@ class CensusTools(object):
 				#Remove unneeded columns
 				census_df = census_df[["CBSA Code", "full_county_fips", "MSA/MD Name"]]
 				#write census omb names to disk
-				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.{end}".format(year=year, end=file_ending), 
+				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.txt".format(year=year), 
 								 index=False,
-								 sep=sep)
-
+								 sep="|")
+				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.csv".format(year=year), 
+								 index=False,
+								 sep=",")
 
 	def combine_omb_ffiec(self, years=[], sep=None, both=True):
 		
