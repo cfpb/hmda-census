@@ -7,7 +7,7 @@ CENSUS_PATH: "../data/census_data/"
 CENSUS_DOCS: "../data/census_docs/"
 FOLDER_PATHS: ["OUT_PATH", "DATA_PATH", "CENSUS_PATH", "CENSUS_DOCS", "SQL_PATH"]
 
-ALL_YEARS: ["2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009",
+ALL_YEARS: ["2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009",
             "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998",
             "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"]
 
@@ -67,6 +67,7 @@ extract_fields_2002_prior: {"Collection Year": 1,
                  "Small County": 7}
 
 msa_md_delineation:
+  omb_2021: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2020/delineation-files/list1_2020.xls"
   omb_2020: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2020/delineation-files/list1_2020.xls"
   omb_2019: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2018/delineation-files/list1_Sep_2018.xls"
   omb_2018: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2018/delineation-files/list1_Sep_2018.xls"
@@ -101,6 +102,7 @@ msa_md_delineation:
   omb_1990: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1990/historical-delineation-files/90mfips.txt"
   
 omb_skip_rows:
+  omb_2021: 2
   omb_2020: 2
   omb_2019: 2
   omb_2018: 2
@@ -121,6 +123,7 @@ omb_skip_rows:
   omb_2003: 2
 
 omb_sheet_names:
+  omb_2021: "List 1"
   omb_2020: "List 1"
   omb_2019: "List 1"
   omb_2018: "List 1"
