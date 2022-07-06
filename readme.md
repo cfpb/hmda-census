@@ -23,6 +23,14 @@ The code is built in Python3.X which can be found at the link below. The followi
 - install requirements packages: `pip install -r requirements.txt`
 - *Note: to load data files to a database, you must have one installed locally. This code has been tested with [PostgreSQL](https://www.postgresql.org/download/)*
 
+### Creating Yearly Census File for the HMDA Platform
+
+1. Update the `python/census_config.yaml` to include the relevant years census file in [msa_md_delinations section](https://github.com/cfpb/hmda-census/blob/master/python/census_config.yaml#L69).
+1. Update the `year` variable in the `python/create_ffiec_census_file.py` file to be the year for which you want to generate the platform census file.
+1. Run the `python/create_ffiec_census_file.py` file.
+1. The file will be created in `output/` as `ffiec_census_msamd_names_<year>.txt`
+1. Move the file in the HMDA-Platform repo as `common/src/main/resources/ffiec_census_<year>.txt`
+
 ### Working With the Scripts
 [Configuration](https://github.com/cfpb/hmda-census/blob/master/python/census_config.yaml): Determines which years of data to use, allows selection of fields in both data files, and contains data specifications and URLs relevant.
 
