@@ -73,100 +73,10 @@ class CensusTools(object):
 		unzip, if true: unzips all zip files in the DATA_PATH location
 		move, if true: moves all files in the from sub folders to the main data folder
 		"""
-		if len(years) < 1:
+		if len("2022") < 1:
 			years = self.config_data["ALL_YEARS"]
 
-		if download:
-
-			base_url = self.config_data["FFIEC_CENSUS_BASE_URL"]
-			for year in years:
-
-				local_file_name = "ffiec_census_{year}.zip".format(year=year)
-				print()
-				print("getting data for {year}".format(year=year))
-
-				if int(year) >= 2015:
-					census_year_url = base_url + "CENSUS{year}.zip".format(year=year)
-
-				elif int(year) == 2014:
-					census_year_url = base_url + "CENSUS{year}.ZIP".format(year=year)
-
-				elif int(year) in [2012, 2013]:
-					census_year_url  = base_url + "Census{year}.zip".format(year=year)
-
-				elif int(year) >= 2008:
-					census_year_url = base_url + "census{year}.zip".format(year=year)
-
-				else:
-					census_year_url = base_url + "Zip%20Files/{year}.zip".format(year=year)
-
-				if self.config_data["DEBUG"]:
-					print(census_year_url)
-
-				census_resp = requests.get(census_year_url)
-				print("saving data for {year} as {name}".format(year=year, name=local_file_name))
-
-				with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
-					infile.write(census_resp.content)
-
-
-		if unzip:
-
-			##get all files in data dir with .zip extension
-			print()
-			print("Unzipping files in {folder}".format(folder=self.config_data["CENSUS_PATH"]))
-			census_files = [f for f in listdir(self.config_data["CENSUS_PATH"]) if isfile(join(self.config_data["CENSUS_PATH"], f))]
-			census_files = [f for f in census_files if f[-4:] == ".zip"]
-
-			if self.config_data["DEBUG"]:
-				print()
-				print("census files to unzip")
-				print(census_files)
-
-			#unzip all census files
-			for file in census_files:
-				if file[-8:-4] in years:
-					with zipfile.ZipFile(self.config_data["CENSUS_PATH"] + file, 'r') as zip_ref:
-						
-						if self.config_data["DEBUG"]:
-							print()
-							print("files in archive:")
-							print(zip_ref.namelist())
-						
-						for file in zip_ref.namelist(): #iterate over files in archive
-							print()
-							print("extracting data and docs for ", file)
-							#handle txt file: extract and rename to census_dict_year.doc or census_dict_year.docx
-							if file[-4:] in [".doc"]:
-								new_name = "census_docs_{year}".format(year=file[-8:-4]) + file[-4:]
-								new_name = new_name.lower()
-
-								with open(self.config_data["CENSUS_DOCS"] + new_name, "wb") as outfile:
-									outfile.write(zip_ref.read(file))
-
-							elif file[-4:] in ["docx"]:
-								new_name = "census_docs_{year}".format(year=file[-9:-5]) + file[-5:]
-								new_name = new_name.lower()
-
-								with open(self.config_data["CENSUS_DOCS"] + new_name, "wb") as outfile:
-									outfile.write(zip_ref.read(file))
-
-							#handle data file: extract and rename to census_data_year.DAT or census_data_year.csv
-							elif file[-4:] in [".DAT", ".csv", ".dat"]:
-								new_name = "census_data_{year}".format(year=file[-8:-4]) + file[-4:]
-								new_name = new_name.lower()
-
-								with open(self.config_data["CENSUS_PATH"] + new_name, "wb") as outfile:
-									outfile.write(zip_ref.read(file))
-
-							elif file[-4:] == ".zip":
-								print("extracting nested zip archive")
-								new_name = "census_data_{year}".format(year=file[-8:-4]) + file[-4:]
-								new_name = new_name.lower()
-
-								with open(self.config_data["CENSUS_PATH"] + new_name, "wb") as outfile:
-									outfile.write(zip_ref.read(file))
-
+ 
 
 		if move:
 
@@ -210,7 +120,6 @@ class CensusTools(object):
 						shutil.move(self.config_data["CENSUS_PATH"] + folder + "/" + file, self.config_data["CENSUS_PATH"])
 					
 					
-					os.rmdir(self.config_data["CENSUS_PATH"] + folder)
 
 
 	def extract_census_fields(self, years=[], sep=None, save_csv=True):
@@ -268,11 +177,11 @@ class CensusTools(object):
 		for year in years:
 			#set file name
 			print()
-			print("processing data for {year}".format(year=year))
+			print("processing data for 2022".format(year=year))
 			#data are loaded as objects to preserve integrity of geographic identifiers with leading 0s
 			if int(year) >= 2012:
 				print("using CSV data file")
-				census_data = pd.read_csv(data_path + "census_data_{year}.csv".format(year=year), 
+				census_data = pd.read_csv(data_path + "census_data_2022.csv".format(year=year), 
 										  usecols=field_nums_2003, 
 										  header=None, 
 										  dtype=object,
@@ -293,7 +202,7 @@ class CensusTools(object):
 					fwf_spec = pd.read_csv(self.config_data["ffiec_census_2002_fwf_spec"])	
 
 									
-				census_data = pd.read_fwf(data_path + "census_data_{year}.dat".format(year=year), 
+				census_data = pd.read_fwf(data_path + "census_data_2022.dat".format(year=year), 
 										  widths=fwf_spec["Length"], 
 										  header=None, 
 										  dtype=object)
@@ -311,10 +220,10 @@ class CensusTools(object):
 					census_data.columns = field_names_2002
 
 			if save_csv:
-				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.txt".format(year=year), 
+				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_2022.txt".format(year=year), 
 								   index=False,
 								   sep="|")
-				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.csv".format(year=year), 
+				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_2022.csv".format(year=year), 
 								   index=False,
 								   sep=",")
 			return_dict[year] = census_data #add data extract to return dictionary
@@ -359,16 +268,16 @@ class CensusTools(object):
 				print("not yet configured for OMB delineation parsing prior to 2003")
 				return
 
-			local_file_name = "excel_delineation_{year}.xls".format(year=year) #set filename for writing to disk
+			local_file_name = "excel_delineation_2022.xls".format(year=year) #set filename for writing to disk
 
 			print()
-			print("getting Census/OMB delineation data for {year}".format(year=year))
+			print("getting Census/OMB delineation data for 2022".format(year=year))
 
 			#request data from site
-			print("calling: \n {url}".format(url=self.config_data["msa_md_delineation"]["omb_{year}".format(year=str(year))]))
-			delin_resp = requests.get(self.config_data["msa_md_delineation"]["omb_{year}".format(year=str(year))])
+			print("calling: \n {url}".format(url=self.config_data["msa_md_delineation"]["omb_2022".format(year=str(year))]))
+			delin_resp = requests.get(self.config_data["msa_md_delineation"]["omb_2022".format(year=str(year))])
 
-			print("saving data for {year} as {name}".format(year=year, name=local_file_name))
+			print("saving data for 2022 as {name}".format(year=year, name=local_file_name))
 
 			with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
 				infile.write(delin_resp.content)
@@ -376,20 +285,20 @@ class CensusTools(object):
 
 			if convert:
 				#configure Excel load based on OMB delineation year file
-				sheet_name = self.config_data["omb_sheet_names"]["omb_{year}".format(year=year)]
-				skip_rows = self.config_data["omb_skip_rows"]["omb_{year}".format(year=year)]
+				sheet_name = self.config_data["omb_sheet_names"]["omb_2022".format(year=year)]
+				skip_rows = self.config_data["omb_skip_rows"]["omb_2022".format(year=year)]
 
 			
 				#read Excel file
 				data_xls = pd.read_excel(self.config_data["CENSUS_PATH"] + local_file_name, sheet_name, index_col=None)
 				#save sheet as CSV
-				data_xls.to_csv(self.config_data["CENSUS_PATH"] + "full_omb_delin_{year}.{end}".format(year=year, end=file_ending), 
+				data_xls.to_csv(self.config_data["CENSUS_PATH"] + "full_omb_delin_2022.{end}".format(year=year, end=file_ending), 
 								encoding='utf-8', 
 								index=False,
 								sep=sep)
 
 				#load CSV to dataframe to extract needed columns
-				census_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "full_omb_delin_{year}.{end}".format(year=year, end=file_ending), 
+				census_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "full_omb_delin_2022.{end}".format(year=year, end=file_ending), 
 										skiprows=skip_rows, 
 										dtype=object, 
 										sep=sep)
@@ -417,10 +326,10 @@ class CensusTools(object):
 				#Remove unneeded columns
 				census_df = census_df[["CBSA Code", "full_county_fips", "MSA/MD Name"]]
 				#write census omb names to disk
-				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.txt".format(year=year), 
+				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_2022.txt".format(year=year), 
 								 index=False,
 								 sep="|")
-				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.csv".format(year=year), 
+				census_df.to_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_2022.csv".format(year=year), 
 								 index=False,
 								 sep=",")
 
@@ -453,15 +362,15 @@ class CensusTools(object):
 				print("not yet configured for OMB delineation parsing prior to 2003")
 				continue
 			print()
-			print("Combining FFIEC Census and OMB data for {year}".format(year=year))
+			print("Combining FFIEC Census and OMB data for 2022".format(year=year))
 			#load FFIEC Census File Cut
-			ffiec_census_df = pd.read_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.{end}".format(year=year, end=file_ending), 
+			ffiec_census_df = pd.read_csv(self.config_data["OUT_PATH"] + "census_data_extract_2022.{end}".format(year=year, end=file_ending), 
 										  dtype=object,
 										  sep=sep,
 										  keep_default_na=False)
 			print(ffiec_census_df.head())
 			#load MSA/MD name file
-			msa_md_name_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.{end}".format(year=year, end=file_ending), 
+			msa_md_name_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_2022.{end}".format(year=year, end=file_ending), 
 										 dtype=object,
 										 sep=sep,
 										 keep_default_na=False)
@@ -484,7 +393,7 @@ class CensusTools(object):
 			ffiec_census_df = ffiec_census_df[self.config_data["OUT_COLUMNS"].keys()]
 
 			#Write file to disk
-			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.{end}".format(year=year, end=file_ending), 
+			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_2022.{end}".format(year=year, end=file_ending), 
 								   index=False, 
 								   sep=sep)
 
@@ -499,12 +408,12 @@ class CensusTools(object):
 			#remove duplicates. These are the records for county and tract that need to be removed from the MSA/MD list
 			msa_md_desc_df.columns = self.config_data["msa_md_desc_out_cols"]
 			msa_md_desc_df.drop_duplicates(inplace=True)
-			msa_md_desc_df.to_csv(self.config_data["OUT_PATH"] + "msa_md_description_{year}.{end}".format(year=year, end=file_ending), 
+			msa_md_desc_df.to_csv(self.config_data["OUT_PATH"] + "msa_md_description_2022.{end}".format(year=year, end=file_ending), 
 								   index=False, 
 								   sep=sep)
 
 			if both:
-				msa_md_desc_df.to_csv(self.config_data["OUT_PATH"] + "msa_md_description_{year}.csv".format(year=year), 
+				msa_md_desc_df.to_csv(self.config_data["OUT_PATH"] + "msa_md_description_2022.csv".format(year=year), 
 									   index=False, 
 									   sep=",")
 
@@ -542,9 +451,9 @@ class CensusTools(object):
 			sql_def_lines = ",\n".join(sql_def_lines)
 
 			#set table and data reference for year
-			table = "ffiec_census_{year}".format(year=year)
+			table = "ffiec_census_2022".format(year=year)
 
-			data_file = self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.csv".format(year=year)
+			data_file = self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_2022.csv".format(year=year)
 			data_file = os.path.abspath(data_file)
 
 			if self.config_data["DEBUG"]:

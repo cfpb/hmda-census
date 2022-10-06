@@ -7,12 +7,12 @@ CENSUS_PATH: "../data/census_data/"
 CENSUS_DOCS: "../data/census_docs/"
 FOLDER_PATHS: ["OUT_PATH", "DATA_PATH", "CENSUS_PATH", "CENSUS_DOCS", "SQL_PATH"]
 
-ALL_YEARS: ["2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009",
+ALL_YEARS: ["2022", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009",
             "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998",
             "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990"]
 
 ffiec_census_2006_fwf_spec: "../schemas/ffiec_census_fwf_spec_2006.csv"
-ffiec_census_2002_fwf_spec: "../schemas/ffiec_census_fwf_spec_2002.csv"
+ffiec_census_2002_fwf_spec: "../schemas/ffiec_census_fwf_spec_2006.csv"
 
 FFIEC_CENSUS_BASE_URL: "https://www.ffiec.gov/Census/Census_Flat_Files/"
 
@@ -41,14 +41,14 @@ extract_fields_2003_on: {"Collection Year": 1,
                  "State": 3, 
                  "County": 4, 
                  "Census Tract": 5, 
-                 "FFIEC Median Family Income": 14, 
-                 "Population": 15,
-                 "Minority Population %": 21,
+                 "FFIEC Median Family Income": 11, 
+                 "Population": 23,
+                 "Minority Population %": 29,
                  "Number of Owner Occupied Units": 880,
                  "Number of 1 to 4 Family Units": 900,
-                 "Tract MFI": 581,
+                 "Tract MFI": 586,
                  "Tract to MSA Income %": 13, 
-                 "Median Age": 953,
+                 "Median Age": 1058,
                  "Small County": 7}
 
 extract_fields_2002_prior: {"Collection Year": 1,
@@ -67,6 +67,7 @@ extract_fields_2002_prior: {"Collection Year": 1,
                  "Small County": 7}
 
 msa_md_delineation:
+  omb_2022: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2020/delineation-files/list1_2020.xls"
   omb_2021: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2020/delineation-files/list1_2020.xls"
   omb_2020: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2020/delineation-files/list1_2020.xls"
   omb_2019: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2018/delineation-files/list1_Sep_2018.xls"
@@ -102,7 +103,7 @@ msa_md_delineation:
   omb_1990: "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/1990/historical-delineation-files/90mfips.txt"
   
 omb_skip_rows:
-  omb_2021: 2
+  omb_2022: 2
   omb_2020: 2
   omb_2019: 2
   omb_2018: 2
@@ -123,7 +124,7 @@ omb_skip_rows:
   omb_2003: 2
 
 omb_sheet_names:
-  omb_2021: "List 1"
+  omb_2022: "List 1"
   omb_2020: "List 1"
   omb_2019: "List 1"
   omb_2018: "List 1"
