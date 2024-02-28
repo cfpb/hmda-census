@@ -22,7 +22,7 @@ class CensusTools(object):
 	"""
 	"""
 
-	def __init__(self, config_file="census_config.yaml"):
+	def __init__(self, config_file="python/census_config.yaml"):
 		"""
 		Sets up the configuration for file paths and download URLs
 		"""
@@ -73,6 +73,7 @@ class CensusTools(object):
 		unzip, if true: unzips all zip files in the DATA_PATH location
 		move, if true: moves all files in the from sub folders to the main data folder
 		"""
+		print(years)
 		if len(years) < 1:
 			years = self.config_data["ALL_YEARS"]
 
@@ -101,6 +102,7 @@ class CensusTools(object):
 					census_year_url = base_url + "Zip%20Files/{year}.zip".format(year=year)
 
 				if self.config_data["DEBUG"]:
+					print("***census_year_url***")
 					print(census_year_url)
 
 				census_resp = requests.get(census_year_url)
@@ -117,7 +119,7 @@ class CensusTools(object):
 			print("Unzipping files in {folder}".format(folder=self.config_data["CENSUS_PATH"]))
 			census_files = [f for f in listdir(self.config_data["CENSUS_PATH"]) if isfile(join(self.config_data["CENSUS_PATH"], f))]
 			census_files = [f for f in census_files if f[-4:] == ".zip"]
-
+   
 			if self.config_data["DEBUG"]:
 				print()
 				print("census files to unzip")
@@ -251,16 +253,19 @@ class CensusTools(object):
 
 		data_path = self.config_data["CENSUS_PATH"] #set path to data files
 
-
-		field_dict_2003 = self.config_data["extract_fields_2003_on"] #fields to extract from file
+		field_dict_2022 = self.config_data["extract_fields_2022_on"] #fields to extract from file
+		field_dict_2003 = self.config_data["extract_fields_2003_to_2021"] #fields to extract from file
 		field_dict_2002 = self.config_data["extract_fields_2002_prior"] #fields to extract from file
 
+		field_names_2022 = list(field_dict_2022.keys())
 		field_names_2003 = list(field_dict_2003.keys())
 		field_names_2002 = list(field_dict_2002.keys())
 
+		field_nums_one_idx_2022 = list(field_dict_2022.values())
 		field_nums_one_idx_2003 = list(field_dict_2003.values())
 		field_nums_one_idx_2002 = list(field_dict_2002.values())
 
+		field_nums_2022 = [int(num) - 1 for num in field_nums_one_idx_2022] #adjust for non-0 indexing in FFIEC file dictionary
 		field_nums_2003 = [int(num) - 1 for num in field_nums_one_idx_2003] #adjust for non-0 indexing in FFIEC file dictionary
 		field_nums_2002 = [int(num) - 1 for num in field_nums_one_idx_2002] #adjust for non-0 indexing in FFIEC file dictionary
 
@@ -270,7 +275,18 @@ class CensusTools(object):
 			print()
 			print("processing data for {year}".format(year=year))
 			#data are loaded as objects to preserve integrity of geographic identifiers with leading 0s
-			if int(year) >= 2012:
+			if int(year) >= 2022:
+				print("using CSV data file")
+				census_data = pd.read_csv(data_path + "census_data_{year}.csv".format(year=year), 
+										  usecols=field_nums_2022, 
+										  header=None, 
+										  dtype=object,
+										  sep=",") #csv is the base format after extraction, don't change this unless you really mean it
+
+				census_data = census_data[field_nums_2022]
+				census_data.columns = field_names_2022
+    
+			elif int(year) >= 2012 and int(year) <= 2021:
 				print("using CSV data file")
 				census_data = pd.read_csv(data_path + "census_data_{year}.csv".format(year=year), 
 										  usecols=field_nums_2003, 
@@ -298,7 +314,13 @@ class CensusTools(object):
 										  header=None, 
 										  dtype=object)
 
-				if int(year) >= 2003:
+				if int(year) >= 2022:
+					#remove fields not in extract dictionary
+					census_data = census_data[field_nums_2022]
+					#set column names
+					census_data.columns = field_names_2022
+     
+				elif int(year) >= 2003 and int(year) <= 2021 :
 					#remove fields not in extract dictionary
 					census_data = census_data[field_nums_2003]
 					#set column names
@@ -309,7 +331,8 @@ class CensusTools(object):
 					census_data = census_data[field_nums_2002]
 					#set column names
 					census_data.columns = field_names_2002
-
+     
+			print("Path: ", self.config_data["OUT_PATH"] + "census_data_extract_{year}.txt".format(year=year))
 			if save_csv:
 				census_data.to_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.txt".format(year=year), 
 								   index=False,
@@ -324,10 +347,12 @@ class CensusTools(object):
 			print("field names to extract")
 			print(field_names_2002)
 			print(field_names_2003)
+			print(field_names_2022)
 			print()
 			print("field numbers from file schema (not 0 adjusted")
-			print(field_nums_one_idx_2003)
 			print(field_nums_one_idx_2002)			
+			print(field_nums_one_idx_2003)
+			print(field_nums_one_idx_2022)
 
 		return return_dict
 
@@ -359,7 +384,7 @@ class CensusTools(object):
 				print("not yet configured for OMB delineation parsing prior to 2003")
 				return
 
-			local_file_name = "excel_delineation_{year}.xls".format(year=year) #set filename for writing to disk
+			local_file_name = "excel_delineation_{year}.xlsx".format(year=year) #set filename for writing to disk
 
 			print()
 			print("getting Census/OMB delineation data for {year}".format(year=year))
@@ -370,6 +395,7 @@ class CensusTools(object):
 
 			print("saving data for {year} as {name}".format(year=year, name=local_file_name))
 
+			print("Path: ",self.config_data["CENSUS_PATH"] + local_file_name)
 			with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
 				infile.write(delin_resp.content)
 
@@ -381,7 +407,8 @@ class CensusTools(object):
 
 			
 				#read Excel file
-				data_xls = pd.read_excel(self.config_data["CENSUS_PATH"] + local_file_name, sheet_name, index_col=None)
+				print("local_file_name: ", local_file_name)
+				data_xls = pd.read_excel(self.config_data["CENSUS_PATH"] + local_file_name, sheet_name, index_col=None,engine ="xlrd") #, engine = "xlrd" , openpyxl
 				#save sheet as CSV
 				data_xls.to_csv(self.config_data["CENSUS_PATH"] + "full_omb_delin_{year}.{end}".format(year=year, end=file_ending), 
 								encoding='utf-8', 
@@ -454,12 +481,14 @@ class CensusTools(object):
 				continue
 			print()
 			print("Combining FFIEC Census and OMB data for {year}".format(year=year))
-			#load FFIEC Census File Cut
+			print(self.config_data["OUT_PATH"] + "census_data_extract_{year}.{end}".format(year=year, end=file_ending))
+			
+   			#load FFIEC Census File Cut
 			ffiec_census_df = pd.read_csv(self.config_data["OUT_PATH"] + "census_data_extract_{year}.{end}".format(year=year, end=file_ending), 
 										  dtype=object,
 										  sep=sep,
 										  keep_default_na=False)
-			print(ffiec_census_df.head())
+
 			#load MSA/MD name file
 			msa_md_name_df = pd.read_csv(self.config_data["CENSUS_PATH"] + "msa_md_names_{year}.{end}".format(year=year, end=file_ending), 
 										 dtype=object,
@@ -484,6 +513,13 @@ class CensusTools(object):
 			ffiec_census_df = ffiec_census_df[self.config_data["OUT_COLUMNS"].keys()]
 
 			#Write file to disk
+			print("Path: ",self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.{end}".format(year=year, end=file_ending))
+			print()
+   
+			# if 'MSA/MD' == "99999", set 'MSA/MD Name' to empty string
+			ffiec_census_df.loc[(ffiec_census_df['MSA/MD'] == "99999"), 'MSA/MD Name'] = ""  # added 2/8/24
+			ffiec_census_df.loc[(ffiec_census_df['Median Age'] == "2002"), 'Median Age'] = "6"  # added 2/8/24   
+
 			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.{end}".format(year=year, end=file_ending), 
 								   index=False, 
 								   sep=sep)
@@ -492,9 +528,11 @@ class CensusTools(object):
 			ffiec_census_df["State"] = ffiec_census_df["State"].map(self.config_data["state_codes_rev"])
 
 			ffiec_census_df["MSA/MD Name"] = ffiec_census_df["MSA/MD Name"].apply(lambda x: str(x).strip())
+
 			msa_md_desc_df = ffiec_census_df[self.config_data["msa_name_cols"]][(ffiec_census_df["MSA/MD"]!="99999")&
 																				(ffiec_census_df["MSA/MD Name"]!="")&
 																				(ffiec_census_df["MSA/MD Name"]!="nan")].copy()
+   
 
 			#remove duplicates. These are the records for county and tract that need to be removed from the MSA/MD list
 			msa_md_desc_df.columns = self.config_data["msa_md_desc_out_cols"]
