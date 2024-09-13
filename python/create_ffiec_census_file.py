@@ -3,7 +3,7 @@ from census_functions import CensusTools
 Censustool = CensusTools()
 
 #Replace <year> with the year for which you want to generate the combined census file
-Censustool.config_data["year"] = [2023]
+Censustool.config_data["year"] = [2019]
 
 # download census files
 Censustool.get_ffiec_census_file(years=Censustool.config_data["year"], download=True, unzip=True, move=True)
@@ -14,8 +14,8 @@ print()
 
 
 # # # #extract desired columns from census files
-extracts_dict = Censustool.extract_census_fields(years=Censustool.config_data["year"]) #sep can be changed to comma for CSV output
-print(extracts_dict.keys)
+# extracts_dict = Censustool.extract_census_fields(years=Censustool.config_data["year"]) #sep can be changed to comma for CSV output
+# print(extracts_dict.keys)
 print()
 print("Done: extract_census_fields")
 print("-------")
@@ -30,7 +30,7 @@ print("-------")
 print()
 
 #Combine census and delineation files 
-census_df_dict = Censustool.combine_omb_ffiec(years=Censustool.config_data["year"], sep="|")
+# census_df_dict = Censustool.combine_omb_ffiec(years=Censustool.config_data["year"], sep="|")
 print()
 print("Done: combine_omb_ffiec")
 print("-------")

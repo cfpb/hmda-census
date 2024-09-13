@@ -86,7 +86,11 @@ class CensusTools(object):
 				print()
 				print("getting data for {year}".format(year=year))
 
-				if int(year) >= 2015:
+
+				if int(year) == 2021:
+					census_year_url = base_url + "Census{year}.zip".format(year=year)
+        
+				elif int(year) >= 2015:
 					census_year_url = base_url + "CENSUS{year}.zip".format(year=year)
 
 				elif int(year) == 2014:
@@ -106,6 +110,9 @@ class CensusTools(object):
 					print(census_year_url)
 
 				census_resp = requests.get(census_year_url)
+				print("Get Response: ", census_resp)
+
+    			
 				print("saving data for {year} as {name}".format(year=year, name=local_file_name))
 
 				with open(self.config_data["CENSUS_PATH"] + local_file_name, "wb") as infile:
@@ -388,7 +395,8 @@ class CensusTools(object):
 
 			print()
 			print("getting Census/OMB delineation data for {year}".format(year=year))
-
+			print("local_file_name: ", local_file_name)
+   
 			#request data from site
 			print("calling: \n {url}".format(url=self.config_data["msa_md_delineation"]["omb_{year}".format(year=str(year))]))
 			delin_resp = requests.get(self.config_data["msa_md_delineation"]["omb_{year}".format(year=str(year))])
@@ -518,7 +526,9 @@ class CensusTools(object):
    
 			# if 'MSA/MD' == "99999", set 'MSA/MD Name' to empty string
 			ffiec_census_df.loc[(ffiec_census_df['MSA/MD'] == "99999"), 'MSA/MD Name'] = ""  # added 2/8/24
-			ffiec_census_df.loc[(ffiec_census_df['Median Age'] == "2002"), 'Median Age'] = "6"  # added 2/8/24   
+   
+			if int(year) >= 2022 and int(year) <= 2027:  
+				ffiec_census_df.loc[(ffiec_census_df['Median Age'] == "2002"), 'Median Age'] = "6"  # added 2/8/24   
 
 			ffiec_census_df.to_csv(self.config_data["OUT_PATH"] + "ffiec_census_msamd_names_{year}.{end}".format(year=year, end=file_ending), 
 								   index=False, 
