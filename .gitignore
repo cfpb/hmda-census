@@ -5,4 +5,5 @@ data/
 .ipynb_checkpoints/
 python/.ipynb_checkpoints/
 python/__pycache__/
-output/
+output/*
+output_FHFA/
